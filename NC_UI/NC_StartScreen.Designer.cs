@@ -1,6 +1,6 @@
 ﻿namespace NC_UI
 {
-    partial class Form1
+    partial class NC_StartScreen
     {
         /// <summary>
         /// Required designer variable.
@@ -28,13 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(NC_StartScreen));
+            this.SuspendLayout();
+            // 
+            // NC_StartScreen
+            // 
+            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "Form1";
+            this.Name = "NC_StartScreen";
+            this.ResumeLayout(false);
+
         }
 
         #endregion
     }
 }
-

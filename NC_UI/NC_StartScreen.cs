@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace NC_UI
 {
-    public partial class Form1 : Form
+    public partial class NC_StartScreen : Form
     {
-        public Form1()
+        public NC_StartScreen()
         {
             InitializeComponent();
         }
