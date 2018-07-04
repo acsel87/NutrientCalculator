@@ -82,6 +82,7 @@
             this.button1 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label7
@@ -350,11 +351,21 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Calibri", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.label9.Location = new System.Drawing.Point(35, 150);
+            this.label9.Location = new System.Drawing.Point(147, 170);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(79, 23);
+            this.label9.Size = new System.Drawing.Size(49, 23);
             this.label9.TabIndex = 37;
-            this.label9.Text = "Per 100g";
+            this.label9.Text = "100g";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.label10.Location = new System.Drawing.Point(33, 168);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(86, 27);
+            this.label10.TabIndex = 38;
+            this.label10.Text = "Amount";
             // 
             // NC_FoodInfo
             // 
@@ -362,6 +373,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1184, 761);
+            this.Controls.Add(this.label10);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
@@ -422,5 +434,6 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label10;
     }
 }

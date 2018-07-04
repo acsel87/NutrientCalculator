@@ -17,11 +17,7 @@ namespace NC_UI
         {
             InitializeComponent();
 
-            string filePath = @"C:\Users\Alex\Desktop\ndb.xlsx";
-
-            List<string> nutrientList = ImportNutrients.ParseExcel(filePath);   
-
-            InsertNutrientsGrid(dataGridView1, nutrientList);            
+            string filePath = @"C:\Users\Alex\Desktop\ndb.xlsx";          
         }
 
         void InsertNutrientsGrid( DataGridView grid, List<string> nutrients)
