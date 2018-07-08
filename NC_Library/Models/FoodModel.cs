@@ -23,7 +23,7 @@ namespace NC_Library.Models
 
                 for (int i = 0; i < nutrientValues.Length; i++)
                 {
-                    nutrientsDecimal[i] = decimal.Parse(nutrientValues[i]);
+                    nutrientsDecimal[i] = Math.Round(decimal.Parse(nutrientValues[i]),2);
                 }                
             }
 

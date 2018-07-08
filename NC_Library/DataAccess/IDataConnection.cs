@@ -17,6 +17,10 @@ namespace NC_Library.DataAccess
         void UpdateRecipe(RecipeModel model);
         void UpdatePlan(PlanModel model);
 
+        void DeleteFood(FoodModel model);
+        void DeleteRecipe(RecipeModel model);
+        void DeletePlan(PlanModel model);
+
         FoodModel ViewFood(FoodModel model);
         RecipeModel ViewRecipe(RecipeModel model);
         PlanModel ViewPlan(PlanModel model);

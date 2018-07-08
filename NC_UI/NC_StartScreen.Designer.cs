@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(NC_StartScreen));
             this.dayPlansTab = new System.Windows.Forms.TabPage();
             this.label2 = new System.Windows.Forms.Label();
@@ -58,14 +59,25 @@
             this.button3 = new System.Windows.Forms.Button();
             this.listBox3 = new System.Windows.Forms.ListBox();
             this.homeTab = new System.Windows.Forms.TabPage();
-            this.button17 = new System.Windows.Forms.Button();
-            this.button16 = new System.Windows.Forms.Button();
-            this.button15 = new System.Windows.Forms.Button();
-            this.button14 = new System.Windows.Forms.Button();
-            this.button13 = new System.Windows.Forms.Button();
-            this.button12 = new System.Windows.Forms.Button();
+            this.weekPlansPanel = new System.Windows.Forms.Panel();
+            this.label3 = new System.Windows.Forms.Label();
+            this.planListBox = new System.Windows.Forms.ListBox();
+            this.cancelPlanButton = new System.Windows.Forms.Button();
+            this.removePlanButtonSun = new System.Windows.Forms.Button();
+            this.addPlanButtonSun = new System.Windows.Forms.Button();
+            this.removePlanButtonSat = new System.Windows.Forms.Button();
+            this.addPlanButtonSat = new System.Windows.Forms.Button();
+            this.removePlanButtonFri = new System.Windows.Forms.Button();
+            this.addPlanButtonFri = new System.Windows.Forms.Button();
+            this.removePlanButtonThu = new System.Windows.Forms.Button();
+            this.addPlanButtonThu = new System.Windows.Forms.Button();
+            this.removePlanButtonWed = new System.Windows.Forms.Button();
+            this.addPlanButtonWed = new System.Windows.Forms.Button();
+            this.removePlanButtonTue = new System.Windows.Forms.Button();
+            this.addPlanButtonTue = new System.Windows.Forms.Button();
+            this.removePlanButtonMon = new System.Windows.Forms.Button();
             this.exportButton = new System.Windows.Forms.Button();
-            this.addPlanButton = new System.Windows.Forms.Button();
+            this.addPlanButtonMon = new System.Windows.Forms.Button();
             this.weekListView = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -77,6 +89,8 @@
             this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader9 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tabControl = new System.Windows.Forms.TabControl();
+            this.exportContextMenuStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.csv = new System.Windows.Forms.ToolStripMenuItem();
             this.dayPlansTab.SuspendLayout();
             this.recipesTab.SuspendLayout();
             this.foodTab.SuspendLayout();
@@ -86,7 +100,9 @@
             this.tabPage3.SuspendLayout();
             this.tabPage4.SuspendLayout();
             this.homeTab.SuspendLayout();
+            this.weekPlansPanel.SuspendLayout();
             this.tabControl.SuspendLayout();
+            this.exportContextMenuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
             // dayPlansTab
@@ -365,94 +381,238 @@
             // 
             // homeTab
             // 
-            this.homeTab.Controls.Add(this.button17);
-            this.homeTab.Controls.Add(this.button16);
-            this.homeTab.Controls.Add(this.button15);
-            this.homeTab.Controls.Add(this.button14);
-            this.homeTab.Controls.Add(this.button13);
-            this.homeTab.Controls.Add(this.button12);
+            this.homeTab.Controls.Add(this.weekPlansPanel);
+            this.homeTab.Controls.Add(this.removePlanButtonSun);
+            this.homeTab.Controls.Add(this.addPlanButtonSun);
+            this.homeTab.Controls.Add(this.removePlanButtonSat);
+            this.homeTab.Controls.Add(this.addPlanButtonSat);
+            this.homeTab.Controls.Add(this.removePlanButtonFri);
+            this.homeTab.Controls.Add(this.addPlanButtonFri);
+            this.homeTab.Controls.Add(this.removePlanButtonThu);
+            this.homeTab.Controls.Add(this.addPlanButtonThu);
+            this.homeTab.Controls.Add(this.removePlanButtonWed);
+            this.homeTab.Controls.Add(this.addPlanButtonWed);
+            this.homeTab.Controls.Add(this.removePlanButtonTue);
+            this.homeTab.Controls.Add(this.addPlanButtonTue);
+            this.homeTab.Controls.Add(this.removePlanButtonMon);
             this.homeTab.Controls.Add(this.exportButton);
-            this.homeTab.Controls.Add(this.addPlanButton);
+            this.homeTab.Controls.Add(this.addPlanButtonMon);
             this.homeTab.Controls.Add(this.weekListView);
             resources.ApplyResources(this.homeTab, "homeTab");
             this.homeTab.Name = "homeTab";
             this.homeTab.UseVisualStyleBackColor = true;
             // 
-            // button17
+            // weekPlansPanel
             // 
-            resources.ApplyResources(this.button17, "button17");
-            this.button17.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.button17.FlatAppearance.BorderSize = 0;
-            this.button17.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.button17.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
-            this.button17.Name = "button17";
-            this.button17.UseVisualStyleBackColor = false;
+            this.weekPlansPanel.BackColor = System.Drawing.Color.White;
+            resources.ApplyResources(this.weekPlansPanel, "weekPlansPanel");
+            this.weekPlansPanel.Controls.Add(this.label3);
+            this.weekPlansPanel.Controls.Add(this.planListBox);
+            this.weekPlansPanel.Controls.Add(this.cancelPlanButton);
+            this.weekPlansPanel.ForeColor = System.Drawing.Color.Transparent;
+            this.weekPlansPanel.Name = "weekPlansPanel";
+            this.weekPlansPanel.Click += new System.EventHandler(this.TabControl_Click);
             // 
-            // button16
+            // label3
             // 
-            resources.ApplyResources(this.button16, "button16");
-            this.button16.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.button16.FlatAppearance.BorderSize = 0;
-            this.button16.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.button16.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
-            this.button16.Name = "button16";
-            this.button16.UseVisualStyleBackColor = false;
+            resources.ApplyResources(this.label3, "label3");
+            this.label3.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.label3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label3.ForeColor = System.Drawing.Color.Black;
+            this.label3.Name = "label3";
             // 
-            // button15
+            // planListBox
             // 
-            resources.ApplyResources(this.button15, "button15");
-            this.button15.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.button15.FlatAppearance.BorderSize = 0;
-            this.button15.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.button15.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
-            this.button15.Name = "button15";
-            this.button15.UseVisualStyleBackColor = false;
+            resources.ApplyResources(this.planListBox, "planListBox");
+            this.planListBox.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.planListBox.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.planListBox.FormattingEnabled = true;
+            this.planListBox.Name = "planListBox";
+            this.planListBox.SelectedIndexChanged += new System.EventHandler(this.PlanListBox_SelectedIndexChanged);
             // 
-            // button14
+            // cancelPlanButton
             // 
-            resources.ApplyResources(this.button14, "button14");
-            this.button14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.button14.FlatAppearance.BorderSize = 0;
-            this.button14.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.button14.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
-            this.button14.Name = "button14";
-            this.button14.UseVisualStyleBackColor = false;
+            resources.ApplyResources(this.cancelPlanButton, "cancelPlanButton");
+            this.cancelPlanButton.BackColor = System.Drawing.Color.LightGray;
+            this.cancelPlanButton.ForeColor = System.Drawing.Color.Black;
+            this.cancelPlanButton.Name = "cancelPlanButton";
+            this.cancelPlanButton.UseVisualStyleBackColor = false;
+            this.cancelPlanButton.Click += new System.EventHandler(this.CancelPlanButton_Click);
             // 
-            // button13
+            // removePlanButtonSun
             // 
-            resources.ApplyResources(this.button13, "button13");
-            this.button13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.button13.FlatAppearance.BorderSize = 0;
-            this.button13.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.button13.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
-            this.button13.Name = "button13";
-            this.button13.UseVisualStyleBackColor = false;
+            resources.ApplyResources(this.removePlanButtonSun, "removePlanButtonSun");
+            this.removePlanButtonSun.BackColor = System.Drawing.Color.DarkRed;
+            this.removePlanButtonSun.FlatAppearance.BorderSize = 0;
+            this.removePlanButtonSun.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.removePlanButtonSun.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
+            this.removePlanButtonSun.Name = "removePlanButtonSun";
+            this.removePlanButtonSun.Tag = "6";
+            this.removePlanButtonSun.UseVisualStyleBackColor = false;
+            this.removePlanButtonSun.Click += new System.EventHandler(this.RemovePlanButton_Click);
             // 
-            // button12
+            // addPlanButtonSun
             // 
-            resources.ApplyResources(this.button12, "button12");
-            this.button12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.button12.FlatAppearance.BorderSize = 0;
-            this.button12.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.button12.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
-            this.button12.Name = "button12";
-            this.button12.UseVisualStyleBackColor = false;
+            resources.ApplyResources(this.addPlanButtonSun, "addPlanButtonSun");
+            this.addPlanButtonSun.BackColor = System.Drawing.Color.DarkRed;
+            this.addPlanButtonSun.FlatAppearance.BorderSize = 0;
+            this.addPlanButtonSun.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.addPlanButtonSun.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
+            this.addPlanButtonSun.Name = "addPlanButtonSun";
+            this.addPlanButtonSun.Tag = "6";
+            this.addPlanButtonSun.UseVisualStyleBackColor = false;
+            this.addPlanButtonSun.Click += new System.EventHandler(this.AddPlanButton_Click);
+            // 
+            // removePlanButtonSat
+            // 
+            resources.ApplyResources(this.removePlanButtonSat, "removePlanButtonSat");
+            this.removePlanButtonSat.BackColor = System.Drawing.Color.DarkRed;
+            this.removePlanButtonSat.FlatAppearance.BorderSize = 0;
+            this.removePlanButtonSat.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.removePlanButtonSat.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
+            this.removePlanButtonSat.Name = "removePlanButtonSat";
+            this.removePlanButtonSat.Tag = "5";
+            this.removePlanButtonSat.UseVisualStyleBackColor = false;
+            this.removePlanButtonSat.Click += new System.EventHandler(this.RemovePlanButton_Click);
+            // 
+            // addPlanButtonSat
+            // 
+            resources.ApplyResources(this.addPlanButtonSat, "addPlanButtonSat");
+            this.addPlanButtonSat.BackColor = System.Drawing.Color.DarkRed;
+            this.addPlanButtonSat.FlatAppearance.BorderSize = 0;
+            this.addPlanButtonSat.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.addPlanButtonSat.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
+            this.addPlanButtonSat.Name = "addPlanButtonSat";
+            this.addPlanButtonSat.Tag = "5";
+            this.addPlanButtonSat.UseVisualStyleBackColor = false;
+            this.addPlanButtonSat.Click += new System.EventHandler(this.AddPlanButton_Click);
+            // 
+            // removePlanButtonFri
+            // 
+            resources.ApplyResources(this.removePlanButtonFri, "removePlanButtonFri");
+            this.removePlanButtonFri.BackColor = System.Drawing.Color.DarkRed;
+            this.removePlanButtonFri.FlatAppearance.BorderSize = 0;
+            this.removePlanButtonFri.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.removePlanButtonFri.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
+            this.removePlanButtonFri.Name = "removePlanButtonFri";
+            this.removePlanButtonFri.Tag = "4";
+            this.removePlanButtonFri.UseVisualStyleBackColor = false;
+            this.removePlanButtonFri.Click += new System.EventHandler(this.RemovePlanButton_Click);
+            // 
+            // addPlanButtonFri
+            // 
+            resources.ApplyResources(this.addPlanButtonFri, "addPlanButtonFri");
+            this.addPlanButtonFri.BackColor = System.Drawing.Color.DarkRed;
+            this.addPlanButtonFri.FlatAppearance.BorderSize = 0;
+            this.addPlanButtonFri.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.addPlanButtonFri.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
+            this.addPlanButtonFri.Name = "addPlanButtonFri";
+            this.addPlanButtonFri.Tag = "4";
+            this.addPlanButtonFri.UseVisualStyleBackColor = false;
+            this.addPlanButtonFri.Click += new System.EventHandler(this.AddPlanButton_Click);
+            // 
+            // removePlanButtonThu
+            // 
+            resources.ApplyResources(this.removePlanButtonThu, "removePlanButtonThu");
+            this.removePlanButtonThu.BackColor = System.Drawing.Color.DarkRed;
+            this.removePlanButtonThu.FlatAppearance.BorderSize = 0;
+            this.removePlanButtonThu.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.removePlanButtonThu.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
+            this.removePlanButtonThu.Name = "removePlanButtonThu";
+            this.removePlanButtonThu.Tag = "3";
+            this.removePlanButtonThu.UseVisualStyleBackColor = false;
+            this.removePlanButtonThu.Click += new System.EventHandler(this.RemovePlanButton_Click);
+            // 
+            // addPlanButtonThu
+            // 
+            resources.ApplyResources(this.addPlanButtonThu, "addPlanButtonThu");
+            this.addPlanButtonThu.BackColor = System.Drawing.Color.DarkRed;
+            this.addPlanButtonThu.FlatAppearance.BorderSize = 0;
+            this.addPlanButtonThu.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.addPlanButtonThu.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
+            this.addPlanButtonThu.Name = "addPlanButtonThu";
+            this.addPlanButtonThu.Tag = "3";
+            this.addPlanButtonThu.UseVisualStyleBackColor = false;
+            this.addPlanButtonThu.Click += new System.EventHandler(this.AddPlanButton_Click);
+            // 
+            // removePlanButtonWed
+            // 
+            resources.ApplyResources(this.removePlanButtonWed, "removePlanButtonWed");
+            this.removePlanButtonWed.BackColor = System.Drawing.Color.DarkRed;
+            this.removePlanButtonWed.FlatAppearance.BorderSize = 0;
+            this.removePlanButtonWed.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.removePlanButtonWed.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
+            this.removePlanButtonWed.Name = "removePlanButtonWed";
+            this.removePlanButtonWed.Tag = "2";
+            this.removePlanButtonWed.UseVisualStyleBackColor = false;
+            this.removePlanButtonWed.Click += new System.EventHandler(this.RemovePlanButton_Click);
+            // 
+            // addPlanButtonWed
+            // 
+            resources.ApplyResources(this.addPlanButtonWed, "addPlanButtonWed");
+            this.addPlanButtonWed.BackColor = System.Drawing.Color.DarkRed;
+            this.addPlanButtonWed.FlatAppearance.BorderSize = 0;
+            this.addPlanButtonWed.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.addPlanButtonWed.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
+            this.addPlanButtonWed.Name = "addPlanButtonWed";
+            this.addPlanButtonWed.Tag = "2";
+            this.addPlanButtonWed.UseVisualStyleBackColor = false;
+            this.addPlanButtonWed.Click += new System.EventHandler(this.AddPlanButton_Click);
+            // 
+            // removePlanButtonTue
+            // 
+            resources.ApplyResources(this.removePlanButtonTue, "removePlanButtonTue");
+            this.removePlanButtonTue.BackColor = System.Drawing.Color.DarkRed;
+            this.removePlanButtonTue.FlatAppearance.BorderSize = 0;
+            this.removePlanButtonTue.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.removePlanButtonTue.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
+            this.removePlanButtonTue.Name = "removePlanButtonTue";
+            this.removePlanButtonTue.Tag = "1";
+            this.removePlanButtonTue.UseVisualStyleBackColor = false;
+            this.removePlanButtonTue.Click += new System.EventHandler(this.RemovePlanButton_Click);
+            // 
+            // addPlanButtonTue
+            // 
+            resources.ApplyResources(this.addPlanButtonTue, "addPlanButtonTue");
+            this.addPlanButtonTue.BackColor = System.Drawing.Color.DarkRed;
+            this.addPlanButtonTue.FlatAppearance.BorderSize = 0;
+            this.addPlanButtonTue.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.addPlanButtonTue.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
+            this.addPlanButtonTue.Name = "addPlanButtonTue";
+            this.addPlanButtonTue.Tag = "1";
+            this.addPlanButtonTue.UseVisualStyleBackColor = false;
+            this.addPlanButtonTue.Click += new System.EventHandler(this.AddPlanButton_Click);
+            // 
+            // removePlanButtonMon
+            // 
+            resources.ApplyResources(this.removePlanButtonMon, "removePlanButtonMon");
+            this.removePlanButtonMon.BackColor = System.Drawing.Color.DarkRed;
+            this.removePlanButtonMon.FlatAppearance.BorderSize = 0;
+            this.removePlanButtonMon.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.removePlanButtonMon.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
+            this.removePlanButtonMon.Name = "removePlanButtonMon";
+            this.removePlanButtonMon.Tag = "0";
+            this.removePlanButtonMon.UseVisualStyleBackColor = false;
+            this.removePlanButtonMon.Click += new System.EventHandler(this.RemovePlanButton_Click);
             // 
             // exportButton
             // 
             resources.ApplyResources(this.exportButton, "exportButton");
             this.exportButton.Name = "exportButton";
             this.exportButton.UseVisualStyleBackColor = true;
+            this.exportButton.Click += new System.EventHandler(this.ExportButton_Click);
             // 
-            // addPlanButton
+            // addPlanButtonMon
             // 
-            resources.ApplyResources(this.addPlanButton, "addPlanButton");
-            this.addPlanButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.addPlanButton.FlatAppearance.BorderSize = 0;
-            this.addPlanButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.addPlanButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
-            this.addPlanButton.Name = "addPlanButton";
-            this.addPlanButton.UseVisualStyleBackColor = false;
+            resources.ApplyResources(this.addPlanButtonMon, "addPlanButtonMon");
+            this.addPlanButtonMon.BackColor = System.Drawing.Color.DarkRed;
+            this.addPlanButtonMon.FlatAppearance.BorderSize = 0;
+            this.addPlanButtonMon.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.addPlanButtonMon.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
+            this.addPlanButtonMon.Name = "addPlanButtonMon";
+            this.addPlanButtonMon.Tag = "0";
+            this.addPlanButtonMon.UseVisualStyleBackColor = false;
+            this.addPlanButtonMon.Click += new System.EventHandler(this.AddPlanButton_Click);
             // 
             // weekListView
             // 
@@ -504,13 +664,13 @@
             ((System.Windows.Forms.ListViewItem)(resources.GetObject("weekListView.Items29"))),
             ((System.Windows.Forms.ListViewItem)(resources.GetObject("weekListView.Items30"))),
             ((System.Windows.Forms.ListViewItem)(resources.GetObject("weekListView.Items31"))),
-            ((System.Windows.Forms.ListViewItem)(resources.GetObject("weekListView.Items32"))),
-            ((System.Windows.Forms.ListViewItem)(resources.GetObject("weekListView.Items33")))});
+            ((System.Windows.Forms.ListViewItem)(resources.GetObject("weekListView.Items32")))});
             this.weekListView.MultiSelect = false;
             this.weekListView.Name = "weekListView";
             this.weekListView.ShowGroups = false;
             this.weekListView.UseCompatibleStateImageBehavior = false;
             this.weekListView.View = System.Windows.Forms.View.Details;
+            this.weekListView.Click += new System.EventHandler(this.TabControl_Click);
             // 
             // columnHeader1
             // 
@@ -559,6 +719,20 @@
             this.tabControl.SelectedIndex = 0;
             this.tabControl.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.tabControl.Tag = "";
+            this.tabControl.Click += new System.EventHandler(this.TabControl_Click);
+            // 
+            // exportContextMenuStrip
+            // 
+            this.exportContextMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.csv});
+            this.exportContextMenuStrip.Name = "contextMenuStrip1";
+            resources.ApplyResources(this.exportContextMenuStrip, "exportContextMenuStrip");
+            // 
+            // csv
+            // 
+            this.csv.Name = "csv";
+            resources.ApplyResources(this.csv, "csv");
+            this.csv.Click += new System.EventHandler(this.Csv_Click);
             // 
             // NC_StartScreen
             // 
@@ -578,7 +752,10 @@
             this.tabPage3.ResumeLayout(false);
             this.tabPage4.ResumeLayout(false);
             this.homeTab.ResumeLayout(false);
+            this.weekPlansPanel.ResumeLayout(false);
+            this.weekPlansPanel.PerformLayout();
             this.tabControl.ResumeLayout(false);
+            this.exportContextMenuStrip.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -589,7 +766,7 @@
         private System.Windows.Forms.TabPage recipesTab;
         private System.Windows.Forms.TabPage foodTab;
         private System.Windows.Forms.TabPage homeTab;
-        private System.Windows.Forms.Button addPlanButton;
+        private System.Windows.Forms.Button addPlanButtonMon;
         private System.Windows.Forms.ListView weekListView;
         private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.ColumnHeader columnHeader2;
@@ -627,11 +804,24 @@
         private System.Windows.Forms.Button button10;
         private System.Windows.Forms.Button button11;
         private System.Windows.Forms.ListBox listBox5;
-        private System.Windows.Forms.Button button17;
-        private System.Windows.Forms.Button button16;
-        private System.Windows.Forms.Button button15;
-        private System.Windows.Forms.Button button14;
-        private System.Windows.Forms.Button button13;
-        private System.Windows.Forms.Button button12;
+        private System.Windows.Forms.Button removePlanButtonMon;
+        private System.Windows.Forms.ListBox planListBox;
+        private System.Windows.Forms.Panel weekPlansPanel;
+        private System.Windows.Forms.Button removePlanButtonSun;
+        private System.Windows.Forms.Button addPlanButtonSun;
+        private System.Windows.Forms.Button removePlanButtonSat;
+        private System.Windows.Forms.Button addPlanButtonSat;
+        private System.Windows.Forms.Button removePlanButtonFri;
+        private System.Windows.Forms.Button addPlanButtonFri;
+        private System.Windows.Forms.Button removePlanButtonThu;
+        private System.Windows.Forms.Button addPlanButtonThu;
+        private System.Windows.Forms.Button removePlanButtonWed;
+        private System.Windows.Forms.Button addPlanButtonWed;
+        private System.Windows.Forms.Button removePlanButtonTue;
+        private System.Windows.Forms.Button addPlanButtonTue;
+        private System.Windows.Forms.ContextMenuStrip exportContextMenuStrip;
+        private System.Windows.Forms.ToolStripMenuItem csv;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button cancelPlanButton;
     }
 }

@@ -45,9 +45,9 @@ namespace NC_Library.DataAccess
                 if (model.FoodList != null)
                 {
                     p = new DynamicParameters();
+                    p.Add("@PlanId", model.Id);
                     foreach (FoodModel f in model.FoodList)
-                    {
-                        p.Add("@PlanId", model.Id);
+                    {                        
                         p.Add("@RecipeId", null);
                         p.Add("@FoodId", f.Id);
 
@@ -58,9 +58,9 @@ namespace NC_Library.DataAccess
                 if (model.RecipeList != null)
                 {
                     p = new DynamicParameters();
+                    p.Add("@PlanId", model.Id);
                     foreach (RecipeModel r in model.RecipeList)
-                    {
-                        p.Add("@PlanId", model.Id);
+                    {                        
                         p.Add("@RecipeId", r.Id);
                         p.Add("@FoodId", null);
 
@@ -83,15 +83,64 @@ namespace NC_Library.DataAccess
 
                 model.Id = p.Get<int>("@id");
 
-                p = new DynamicParameters();
-                foreach (FoodModel f in model.FoodList)
+                if (model.FoodList != null)
                 {
+                    p = new DynamicParameters();
                     p.Add("@RecipeId", model.Id);
-                    p.Add("@FoodId", f.Id);
+                    foreach (FoodModel f in model.FoodList)
+                    {
+                        p.Add("@FoodId", f.Id);
 
-                    connection.Execute("dbo.spRecipeItems_Insert", p, commandType: CommandType.StoredProcedure);
+                        connection.Execute("dbo.spRecipeItems_Insert", p, commandType: CommandType.StoredProcedure);
+                    }
                 }
             }
+        }
+
+        public void DeleteFood(FoodModel model)
+        {
+            if (model.Type == GlobalConfig.custom)
+            {
+                using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(GlobalConfig.CnnString(db)))
+                {
+                    var p = new DynamicParameters();
+                    p.Add("@Id", model.Id);
+
+                    connection.Execute("dbo.spPlanItems_DeleteByFood", p, commandType: CommandType.StoredProcedure);
+
+                    connection.Execute("dbo.spRecipeItems_DeleteByFood", p, commandType: CommandType.StoredProcedure);
+
+                    connection.Execute("dbo.spFood_Delete", p, commandType: CommandType.StoredProcedure);
+                }
+            }            
+        }
+
+        public void DeletePlan(PlanModel model)
+        {
+            using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(GlobalConfig.CnnString(db)))
+            {
+                var p = new DynamicParameters();
+                p.Add("@Id", model.Id);               
+
+                connection.Execute("dbo.spPlanItems_Delete", p, commandType: CommandType.StoredProcedure);
+
+                connection.Execute("dbo.spPlan_Delete", p, commandType: CommandType.StoredProcedure);
+            }
+        }
+
+        public void DeleteRecipe(RecipeModel model)
+        {            
+            using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(GlobalConfig.CnnString(db)))
+            {
+                var p = new DynamicParameters();
+                p.Add("@Id", model.Id);
+
+                connection.Execute("dbo.spPlanItems_DeleteByRecipe", p, commandType: CommandType.StoredProcedure);
+
+                connection.Execute("dbo.spRecipeItems_Delete", p, commandType: CommandType.StoredProcedure);
+
+                connection.Execute("dbo.spRecipe_Delete", p, commandType: CommandType.StoredProcedure);
+            }            
         }
 
         public List<FoodModel> GetFood_All()
@@ -159,32 +208,137 @@ namespace NC_Library.DataAccess
 
         public void UpdateFood(FoodModel model)
         {
-            throw new NotImplementedException();
+            using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(GlobalConfig.CnnString(db)))
+            {
+                var p = new DynamicParameters();
+                p.Add("@Name", model.Name);
+                p.Add("@Type", model.Type);
+                p.Add("@Nutrient_List", model.Nutrient_List);
+                p.Add("@Id", model.Id);
+
+                connection.Execute("dbo.spFood_Update", p, commandType: CommandType.StoredProcedure);
+            }
         }
 
         public void UpdatePlan(PlanModel model)
         {
-            throw new NotImplementedException();
+            using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(GlobalConfig.CnnString(db)))
+            {
+                var p = new DynamicParameters();
+                p.Add("@Name", model.Name);
+                p.Add("@Amount", model.Amount);
+                p.Add("@Id", model.Id);
+
+                connection.Execute("dbo.spPlan_Update", p, commandType: CommandType.StoredProcedure);
+
+                p = new DynamicParameters();
+                p.Add("@PlanId", model.Id);
+
+                connection.Execute("dbo.spPlanItems_Delete", p, commandType: CommandType.StoredProcedure);
+
+                if (model.FoodList != null)
+                {
+                    foreach (FoodModel f in model.FoodList)
+                    {
+                        p.Add("@RecipeId", null);
+                        p.Add("@FoodId", f.Id);
+
+                        connection.Execute("dbo.spPlanItems_Insert", p, commandType: CommandType.StoredProcedure);
+                    }
+                }
+
+                if (model.RecipeList != null)
+                {                   
+                    foreach (RecipeModel r in model.RecipeList)
+                    {
+                        p.Add("@RecipeId", r.Id);
+                        p.Add("@FoodId", null);
+
+                        connection.Execute("dbo.spPlanItems_Insert", p, commandType: CommandType.StoredProcedure);
+                    }
+                }
+            }
         }
 
         public void UpdateRecipe(RecipeModel model)
         {
-            throw new NotImplementedException();
+            using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(GlobalConfig.CnnString(db)))
+            {
+                var p = new DynamicParameters();
+                p.Add("@Name", model.Name);
+                p.Add("@Amount", model.Amount);                
+                p.Add("@Id", model.Id);
+
+                connection.Execute("dbo.spRecipe_Update", p, commandType: CommandType.StoredProcedure);
+
+                p = new DynamicParameters();
+                p.Add("@RecipeId", model.Id);
+
+                connection.Execute("dbo.spRecipeItems_Delete", p, commandType: CommandType.StoredProcedure);
+
+                if (model.FoodList != null)
+                {
+                    foreach (FoodModel f in model.FoodList)
+                    {
+                        p.Add("@FoodId", f.Id);
+
+                        connection.Execute("dbo.spRecipeItems_Insert", p, commandType: CommandType.StoredProcedure);
+                    }
+                }
+            }
         }
 
         public FoodModel ViewFood(FoodModel model)
         {
-            throw new NotImplementedException();
+            using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(GlobalConfig.CnnString(db)))
+            {
+                var p = new DynamicParameters();
+                p.Add("@Id", model.Id);
+
+                model = connection.Query<FoodModel>("dbo.spFood_GetById", p, commandType: CommandType.StoredProcedure).First();
+            }
+
+            return model;
         }
 
         public PlanModel ViewPlan(PlanModel model)
         {
-            throw new NotImplementedException();
+            using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(GlobalConfig.CnnString(db)))
+            {
+                var p = new DynamicParameters();
+                p.Add("@Id", model.Id);
+
+                model = connection.Query<PlanModel>("dbo.spPlan_GetById", p, commandType: CommandType.StoredProcedure).First();
+
+                model.FoodList = connection.Query<FoodModel>("dbo.spPlanItems_GetFood", p, commandType: CommandType.StoredProcedure).ToList();
+
+                model.RecipeList = connection.Query<RecipeModel>("dbo.spPlanItems_GetRecipe", p, commandType: CommandType.StoredProcedure).ToList();
+
+                foreach (RecipeModel r in model.RecipeList)
+                {
+                    p = new DynamicParameters();
+                    p.Add("@Id", r.Id);
+
+                    r.FoodList = connection.Query<FoodModel>("dbo.spRecipeItems_GetFood", p, commandType: CommandType.StoredProcedure).ToList();
+                }
+            }
+
+            return model;
         }
 
         public RecipeModel ViewRecipe(RecipeModel model)
         {
-            throw new NotImplementedException();
+            using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(GlobalConfig.CnnString(db)))
+            {
+                var p = new DynamicParameters();
+                p.Add("@Id", model.Id);
+
+                model = connection.Query<RecipeModel>("dbo.spRecipe_GetById", p, commandType: CommandType.StoredProcedure).First();
+
+                model.FoodList = connection.Query<FoodModel>("dbo.spRecipeItems_GetFood", p, commandType: CommandType.StoredProcedure).ToList();
+            }
+
+            return model;
         }
     }
 }

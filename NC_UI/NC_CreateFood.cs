@@ -16,8 +16,6 @@ namespace NC_UI
         public NC_CreateFood()
         {
             InitializeComponent();
-
-            string filePath = @"C:\Users\Alex\Desktop\ndb.xlsx";          
         }
 
         void InsertNutrientsGrid( DataGridView grid, List<string> nutrients)
