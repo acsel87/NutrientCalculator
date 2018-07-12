@@ -32,55 +32,61 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(NC_CreateFood));
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.foodNameTextBox = new System.Windows.Forms.TextBox();
+            this.createButton = new System.Windows.Forms.Button();
+            this.cancelButton = new System.Windows.Forms.Button();
+            this.nutrientsDataGridView = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Per100g = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.button3 = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.saveButton = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.nutrientsDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
-            // textBox1
+            // foodNameTextBox
             // 
-            this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.foodNameTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(272, 43);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(612, 38);
-            this.textBox1.TabIndex = 0;
-            this.textBox1.Text = "Name of the food...";
+            this.foodNameTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.foodNameTextBox.ForeColor = System.Drawing.Color.Gray;
+            this.foodNameTextBox.Location = new System.Drawing.Point(272, 43);
+            this.foodNameTextBox.Name = "foodNameTextBox";
+            this.foodNameTextBox.Size = new System.Drawing.Size(612, 38);
+            this.foodNameTextBox.TabIndex = 0;
+            this.foodNameTextBox.Tag = "Name of the food...";
+            this.foodNameTextBox.Text = "Name of the food...";
+            this.foodNameTextBox.Enter += new System.EventHandler(this.FoodNameTextBox_Enter);
+            this.foodNameTextBox.Leave += new System.EventHandler(this.FoodNameTextBox_Leave);
             // 
-            // button1
+            // createButton
             // 
-            this.button1.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(272, 664);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(168, 47);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "Create";
-            this.button1.UseVisualStyleBackColor = true;
+            this.createButton.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.createButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.createButton.Location = new System.Drawing.Point(272, 664);
+            this.createButton.Name = "createButton";
+            this.createButton.Size = new System.Drawing.Size(168, 47);
+            this.createButton.TabIndex = 3;
+            this.createButton.Text = "Create";
+            this.createButton.UseVisualStyleBackColor = true;
+            this.createButton.Click += new System.EventHandler(this.CreateButton_Click);
             // 
-            // button2
+            // cancelButton
             // 
-            this.button2.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(716, 664);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(168, 47);
-            this.button2.TabIndex = 4;
-            this.button2.Text = "Cancel";
-            this.button2.UseVisualStyleBackColor = true;
+            this.cancelButton.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.cancelButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cancelButton.Location = new System.Drawing.Point(716, 664);
+            this.cancelButton.Name = "cancelButton";
+            this.cancelButton.Size = new System.Drawing.Size(168, 47);
+            this.cancelButton.TabIndex = 4;
+            this.cancelButton.Text = "Cancel";
+            this.cancelButton.UseVisualStyleBackColor = true;
+            this.cancelButton.Click += new System.EventHandler(this.CancelButton_Click);
             // 
-            // dataGridView1
+            // nutrientsDataGridView
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.nutrientsDataGridView.AllowUserToAddRows = false;
+            this.nutrientsDataGridView.AllowUserToDeleteRows = false;
+            this.nutrientsDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.nutrientsDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
             this.Per100g});
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -92,13 +98,13 @@
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle3;
-            this.dataGridView1.Location = new System.Drawing.Point(272, 98);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(612, 549);
-            this.dataGridView1.TabIndex = 5;
+            this.nutrientsDataGridView.DefaultCellStyle = dataGridViewCellStyle3;
+            this.nutrientsDataGridView.Location = new System.Drawing.Point(272, 98);
+            this.nutrientsDataGridView.Name = "nutrientsDataGridView";
+            this.nutrientsDataGridView.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.nutrientsDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
+            this.nutrientsDataGridView.Size = new System.Drawing.Size(612, 549);
+            this.nutrientsDataGridView.TabIndex = 5;
             // 
             // Column1
             // 
@@ -127,17 +133,17 @@
             this.Per100g.Name = "Per100g";
             this.Per100g.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             // 
-            // button3
+            // saveButton
             // 
-            this.button3.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.button3.Enabled = false;
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(446, 664);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(168, 47);
-            this.button3.TabIndex = 6;
-            this.button3.Text = "Save";
-            this.button3.UseVisualStyleBackColor = true;
+            this.saveButton.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.saveButton.Enabled = false;
+            this.saveButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.saveButton.Location = new System.Drawing.Point(446, 664);
+            this.saveButton.Name = "saveButton";
+            this.saveButton.Size = new System.Drawing.Size(168, 47);
+            this.saveButton.TabIndex = 6;
+            this.saveButton.Text = "Save";
+            this.saveButton.UseVisualStyleBackColor = true;
             // 
             // NC_CreateFood
             // 
@@ -145,17 +151,18 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1184, 761);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.saveButton);
+            this.Controls.Add(this.nutrientsDataGridView);
+            this.Controls.Add(this.cancelButton);
+            this.Controls.Add(this.createButton);
+            this.Controls.Add(this.foodNameTextBox);
             this.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "NC_CreateFood";
             this.Text = "NC_CreateFood";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nutrientsDataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -163,12 +170,12 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.TextBox foodNameTextBox;
+        private System.Windows.Forms.Button createButton;
+        private System.Windows.Forms.Button cancelButton;
+        private System.Windows.Forms.DataGridView nutrientsDataGridView;
+        private System.Windows.Forms.Button saveButton;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Per100g;
-        private System.Windows.Forms.Button button3;
     }
 }

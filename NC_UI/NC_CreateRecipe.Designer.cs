@@ -35,16 +35,17 @@
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.button3 = new System.Windows.Forms.Button();
+            this.addFoodButton = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.button4 = new System.Windows.Forms.Button();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Per100g = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.button4 = new System.Windows.Forms.Button();
+            this.searchFoodPanel = new System.Windows.Forms.Panel();
+            this.searchFoodTextBox = new System.Windows.Forms.TextBox();
             this.button5 = new System.Windows.Forms.Button();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            this.panel1.SuspendLayout();
+            this.searchFoodPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // button2
@@ -80,15 +81,16 @@
             this.textBox1.TabIndex = 5;
             this.textBox1.Text = "Name of the recipe...";
             // 
-            // button3
+            // addFoodButton
             // 
-            this.button3.Font = new System.Drawing.Font("Calibri", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(260, 75);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(141, 41);
-            this.button3.TabIndex = 10;
-            this.button3.Text = "Add food";
-            this.button3.UseVisualStyleBackColor = true;
+            this.addFoodButton.Font = new System.Drawing.Font("Calibri", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.addFoodButton.Location = new System.Drawing.Point(260, 75);
+            this.addFoodButton.Name = "addFoodButton";
+            this.addFoodButton.Size = new System.Drawing.Size(141, 41);
+            this.addFoodButton.TabIndex = 10;
+            this.addFoodButton.Text = "Add food";
+            this.addFoodButton.UseVisualStyleBackColor = true;
+            this.addFoodButton.Click += new System.EventHandler(this.AddFoodButton_Click);
             // 
             // dataGridView1
             // 
@@ -114,16 +116,6 @@
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(612, 541);
             this.dataGridView1.TabIndex = 11;
-            // 
-            // button4
-            // 
-            this.button4.Font = new System.Drawing.Font("Calibri", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.Location = new System.Drawing.Point(656, 75);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(216, 41);
-            this.button4.TabIndex = 12;
-            this.button4.Text = "Remove selected";
-            this.button4.UseVisualStyleBackColor = true;
             // 
             // Column1
             // 
@@ -151,24 +143,39 @@
             this.Per100g.Name = "Per100g";
             this.Per100g.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             // 
-            // panel1
+            // button4
             // 
-            this.panel1.Controls.Add(this.textBox2);
-            this.panel1.Enabled = false;
-            this.panel1.Location = new System.Drawing.Point(667, 168);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(435, 494);
-            this.panel1.TabIndex = 13;
-            this.panel1.Visible = false;
+            this.button4.Font = new System.Drawing.Font("Calibri", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button4.Location = new System.Drawing.Point(656, 75);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(216, 41);
+            this.button4.TabIndex = 12;
+            this.button4.Text = "Remove selected";
+            this.button4.UseVisualStyleBackColor = true;
             // 
-            // textBox2
+            // searchFoodPanel
             // 
-            this.textBox2.Font = new System.Drawing.Font("Calibri", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(3, 3);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(418, 40);
-            this.textBox2.TabIndex = 0;
-            this.textBox2.Text = "Search for food...";
+            this.searchFoodPanel.Controls.Add(this.searchFoodTextBox);
+            this.searchFoodPanel.Location = new System.Drawing.Point(667, 168);
+            this.searchFoodPanel.Name = "searchFoodPanel";
+            this.searchFoodPanel.Size = new System.Drawing.Size(435, 494);
+            this.searchFoodPanel.TabIndex = 13;
+            this.searchFoodPanel.Visible = false;
+            // 
+            // searchFoodTextBox
+            // 
+            this.searchFoodTextBox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.searchFoodTextBox.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
+            this.searchFoodTextBox.Font = new System.Drawing.Font("Calibri", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.searchFoodTextBox.ForeColor = System.Drawing.Color.Gray;
+            this.searchFoodTextBox.Location = new System.Drawing.Point(3, 3);
+            this.searchFoodTextBox.Name = "searchFoodTextBox";
+            this.searchFoodTextBox.Size = new System.Drawing.Size(418, 40);
+            this.searchFoodTextBox.TabIndex = 0;
+            this.searchFoodTextBox.Tag = "Search for food...";
+            this.searchFoodTextBox.Text = "Search for food...";
+            this.searchFoodTextBox.Enter += new System.EventHandler(this.SearchFoodTextBox_Enter);
+            this.searchFoodTextBox.Leave += new System.EventHandler(this.SearchFoodTextBox_Leave);
             // 
             // button5
             // 
@@ -182,17 +189,29 @@
             this.button5.Text = "Save";
             this.button5.UseVisualStyleBackColor = true;
             // 
+            // comboBox1
+            // 
+            this.comboBox1.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.comboBox1.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(87, 134);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(121, 23);
+            this.comboBox1.TabIndex = 15;
+            // 
             // NC_CreateRecipe
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1184, 761);
+            this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.button5);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.searchFoodPanel);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.button3);
+            this.Controls.Add(this.addFoodButton);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.textBox1);
@@ -201,8 +220,8 @@
             this.Name = "NC_CreateRecipe";
             this.Text = "NC_CreateRecipe";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.searchFoodPanel.ResumeLayout(false);
+            this.searchFoodPanel.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -213,13 +232,14 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button addFoodButton;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Per100g;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Panel searchFoodPanel;
+        private System.Windows.Forms.TextBox searchFoodTextBox;
         private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.ComboBox comboBox1;
     }
 }

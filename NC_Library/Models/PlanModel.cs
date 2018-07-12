@@ -14,34 +14,34 @@ namespace NC_Library.Models
         public List<FoodModel> FoodList { get; set; } = new List<FoodModel>();
         public List<RecipeModel> RecipeList { get; set; } = new List<RecipeModel>();
 
-        private decimal[] nutrientList = new decimal[32];
+        //private decimal[] nutrientList = new decimal[32];
 
         public decimal[] NutrientList
         {
             get
             {
-                if (Id != 0)
-                {
-                    GetNutrientList();
-                }                
-                return nutrientList;
+                //if (Id != 0)
+                //{
+                   return GetNutrientList();
+                //}                
+                //return nutrientList;
             }
 
-            set
-            {
-                nutrientList = value;
-            }
+            //set
+            //{
+            //    nutrientList = value;
+            //}
         }
 
-        private void GetNutrientList()
+        private decimal[] GetNutrientList()
         {
-            nutrientList = new decimal[32];
+            decimal[] nutrientList = new decimal[32];
 
             if (FoodList != null)
             {
                 foreach (FoodModel f in FoodList)
                 {
-                    nutrientList.AddDecimalArray(f.NutrientDecimalList());
+                    nutrientList.AddDecimalArray(f.NutrientList);
                 }
             }
 
@@ -55,6 +55,8 @@ namespace NC_Library.Models
                     }
                 }
             }
+
+            return nutrientList;
         }
     }
 }

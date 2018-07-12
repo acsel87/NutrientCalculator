@@ -33,31 +33,35 @@
             this.dayPlansTab = new System.Windows.Forms.TabPage();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.listBox6 = new System.Windows.Forms.ListBox();
+            this.dayPlanItemsListBox = new System.Windows.Forms.ListBox();
             this.button9 = new System.Windows.Forms.Button();
             this.button10 = new System.Windows.Forms.Button();
             this.button11 = new System.Windows.Forms.Button();
-            this.listBox5 = new System.Windows.Forms.ListBox();
+            this.dayPlanListBox = new System.Windows.Forms.ListBox();
             this.recipesTab = new System.Windows.Forms.TabPage();
             this.button6 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
+            this.addRecipeButton = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
-            this.listBox4 = new System.Windows.Forms.ListBox();
+            this.recipeListBox = new System.Windows.Forms.ListBox();
             this.foodTab = new System.Windows.Forms.TabPage();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.foodListViewButton = new System.Windows.Forms.Button();
+            this.foodSearchComboBox = new System.Windows.Forms.ComboBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.commonFoodViewButton = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.commonFoodListBox = new System.Windows.Forms.ListBox();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.favoriteFoodViewButton = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.listBox2 = new System.Windows.Forms.ListBox();
+            this.favoriteFoodListBox = new System.Windows.Forms.ListBox();
             this.tabPage4 = new System.Windows.Forms.TabPage();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.listBox3 = new System.Windows.Forms.ListBox();
+            this.customFoodViewButton = new System.Windows.Forms.Button();
+            this.editCustomFoodButton = new System.Windows.Forms.Button();
+            this.addCustomFoodButton = new System.Windows.Forms.Button();
+            this.removeCustomFoodButton = new System.Windows.Forms.Button();
+            this.customFoodListBox = new System.Windows.Forms.ListBox();
             this.homeTab = new System.Windows.Forms.TabPage();
             this.weekPlansPanel = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
@@ -91,6 +95,8 @@
             this.tabControl = new System.Windows.Forms.TabControl();
             this.exportContextMenuStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.csv = new System.Windows.Forms.ToolStripMenuItem();
+            this.recipeViewButton = new System.Windows.Forms.Button();
+            this.planViewButton = new System.Windows.Forms.Button();
             this.dayPlansTab.SuspendLayout();
             this.recipesTab.SuspendLayout();
             this.foodTab.SuspendLayout();
@@ -107,13 +113,14 @@
             // 
             // dayPlansTab
             // 
+            this.dayPlansTab.Controls.Add(this.planViewButton);
             this.dayPlansTab.Controls.Add(this.label2);
             this.dayPlansTab.Controls.Add(this.label1);
-            this.dayPlansTab.Controls.Add(this.listBox6);
+            this.dayPlansTab.Controls.Add(this.dayPlanItemsListBox);
             this.dayPlansTab.Controls.Add(this.button9);
             this.dayPlansTab.Controls.Add(this.button10);
             this.dayPlansTab.Controls.Add(this.button11);
-            this.dayPlansTab.Controls.Add(this.listBox5);
+            this.dayPlansTab.Controls.Add(this.dayPlanListBox);
             resources.ApplyResources(this.dayPlansTab, "dayPlansTab");
             this.dayPlansTab.Name = "dayPlansTab";
             this.dayPlansTab.UseVisualStyleBackColor = true;
@@ -128,25 +135,11 @@
             resources.ApplyResources(this.label1, "label1");
             this.label1.Name = "label1";
             // 
-            // listBox6
+            // dayPlanItemsListBox
             // 
-            resources.ApplyResources(this.listBox6, "listBox6");
-            this.listBox6.FormattingEnabled = true;
-            this.listBox6.Items.AddRange(new object[] {
-            resources.GetString("listBox6.Items"),
-            resources.GetString("listBox6.Items1"),
-            resources.GetString("listBox6.Items2"),
-            resources.GetString("listBox6.Items3"),
-            resources.GetString("listBox6.Items4"),
-            resources.GetString("listBox6.Items5"),
-            resources.GetString("listBox6.Items6"),
-            resources.GetString("listBox6.Items7"),
-            resources.GetString("listBox6.Items8"),
-            resources.GetString("listBox6.Items9"),
-            resources.GetString("listBox6.Items10"),
-            resources.GetString("listBox6.Items11"),
-            resources.GetString("listBox6.Items12")});
-            this.listBox6.Name = "listBox6";
+            resources.ApplyResources(this.dayPlanItemsListBox, "dayPlanItemsListBox");
+            this.dayPlanItemsListBox.FormattingEnabled = true;
+            this.dayPlanItemsListBox.Name = "dayPlanItemsListBox";
             // 
             // button9
             // 
@@ -166,32 +159,19 @@
             this.button11.Name = "button11";
             this.button11.UseVisualStyleBackColor = true;
             // 
-            // listBox5
+            // dayPlanListBox
             // 
-            resources.ApplyResources(this.listBox5, "listBox5");
-            this.listBox5.FormattingEnabled = true;
-            this.listBox5.Items.AddRange(new object[] {
-            resources.GetString("listBox5.Items"),
-            resources.GetString("listBox5.Items1"),
-            resources.GetString("listBox5.Items2"),
-            resources.GetString("listBox5.Items3"),
-            resources.GetString("listBox5.Items4"),
-            resources.GetString("listBox5.Items5"),
-            resources.GetString("listBox5.Items6"),
-            resources.GetString("listBox5.Items7"),
-            resources.GetString("listBox5.Items8"),
-            resources.GetString("listBox5.Items9"),
-            resources.GetString("listBox5.Items10"),
-            resources.GetString("listBox5.Items11"),
-            resources.GetString("listBox5.Items12")});
-            this.listBox5.Name = "listBox5";
+            resources.ApplyResources(this.dayPlanListBox, "dayPlanListBox");
+            this.dayPlanListBox.FormattingEnabled = true;
+            this.dayPlanListBox.Name = "dayPlanListBox";
             // 
             // recipesTab
             // 
+            this.recipesTab.Controls.Add(this.recipeViewButton);
             this.recipesTab.Controls.Add(this.button6);
-            this.recipesTab.Controls.Add(this.button7);
+            this.recipesTab.Controls.Add(this.addRecipeButton);
             this.recipesTab.Controls.Add(this.button8);
-            this.recipesTab.Controls.Add(this.listBox4);
+            this.recipesTab.Controls.Add(this.recipeListBox);
             resources.ApplyResources(this.recipesTab, "recipesTab");
             this.recipesTab.Name = "recipesTab";
             this.recipesTab.UseVisualStyleBackColor = true;
@@ -202,11 +182,12 @@
             this.button6.Name = "button6";
             this.button6.UseVisualStyleBackColor = true;
             // 
-            // button7
+            // addRecipeButton
             // 
-            resources.ApplyResources(this.button7, "button7");
-            this.button7.Name = "button7";
-            this.button7.UseVisualStyleBackColor = true;
+            resources.ApplyResources(this.addRecipeButton, "addRecipeButton");
+            this.addRecipeButton.Name = "addRecipeButton";
+            this.addRecipeButton.UseVisualStyleBackColor = true;
+            this.addRecipeButton.Click += new System.EventHandler(this.AddRecipeButton);
             // 
             // button8
             // 
@@ -214,25 +195,11 @@
             this.button8.Name = "button8";
             this.button8.UseVisualStyleBackColor = true;
             // 
-            // listBox4
+            // recipeListBox
             // 
-            resources.ApplyResources(this.listBox4, "listBox4");
-            this.listBox4.FormattingEnabled = true;
-            this.listBox4.Items.AddRange(new object[] {
-            resources.GetString("listBox4.Items"),
-            resources.GetString("listBox4.Items1"),
-            resources.GetString("listBox4.Items2"),
-            resources.GetString("listBox4.Items3"),
-            resources.GetString("listBox4.Items4"),
-            resources.GetString("listBox4.Items5"),
-            resources.GetString("listBox4.Items6"),
-            resources.GetString("listBox4.Items7"),
-            resources.GetString("listBox4.Items8"),
-            resources.GetString("listBox4.Items9"),
-            resources.GetString("listBox4.Items10"),
-            resources.GetString("listBox4.Items11"),
-            resources.GetString("listBox4.Items12")});
-            this.listBox4.Name = "listBox4";
+            resources.ApplyResources(this.recipeListBox, "recipeListBox");
+            this.recipeListBox.FormattingEnabled = true;
+            this.recipeListBox.Name = "recipeListBox";
             // 
             // foodTab
             // 
@@ -253,23 +220,42 @@
             // 
             // tabPage1
             // 
-            this.tabPage1.Controls.Add(this.textBox1);
+            this.tabPage1.Controls.Add(this.foodListViewButton);
+            this.tabPage1.Controls.Add(this.foodSearchComboBox);
             resources.ApplyResources(this.tabPage1, "tabPage1");
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
-            // textBox1
+            // foodListViewButton
             // 
-            resources.ApplyResources(this.textBox1, "textBox1");
-            this.textBox1.Name = "textBox1";
+            resources.ApplyResources(this.foodListViewButton, "foodListViewButton");
+            this.foodListViewButton.Name = "foodListViewButton";
+            this.foodListViewButton.UseVisualStyleBackColor = true;
+            this.foodListViewButton.Click += new System.EventHandler(this.FoodListViewButton_Click);
+            // 
+            // foodSearchComboBox
+            // 
+            this.foodSearchComboBox.DropDownHeight = 500;
+            this.foodSearchComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.foodSearchComboBox.FormattingEnabled = true;
+            resources.ApplyResources(this.foodSearchComboBox, "foodSearchComboBox");
+            this.foodSearchComboBox.Name = "foodSearchComboBox";
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.commonFoodViewButton);
             this.tabPage2.Controls.Add(this.button1);
-            this.tabPage2.Controls.Add(this.listBox1);
+            this.tabPage2.Controls.Add(this.commonFoodListBox);
             resources.ApplyResources(this.tabPage2, "tabPage2");
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // commonFoodViewButton
+            // 
+            resources.ApplyResources(this.commonFoodViewButton, "commonFoodViewButton");
+            this.commonFoodViewButton.Name = "commonFoodViewButton";
+            this.commonFoodViewButton.UseVisualStyleBackColor = true;
+            this.commonFoodViewButton.Click += new System.EventHandler(this.CommonFoodViewButton_Click);
             // 
             // button1
             // 
@@ -277,33 +263,27 @@
             this.button1.Name = "button1";
             this.button1.UseVisualStyleBackColor = true;
             // 
-            // listBox1
+            // commonFoodListBox
             // 
-            resources.ApplyResources(this.listBox1, "listBox1");
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.Items.AddRange(new object[] {
-            resources.GetString("listBox1.Items"),
-            resources.GetString("listBox1.Items1"),
-            resources.GetString("listBox1.Items2"),
-            resources.GetString("listBox1.Items3"),
-            resources.GetString("listBox1.Items4"),
-            resources.GetString("listBox1.Items5"),
-            resources.GetString("listBox1.Items6"),
-            resources.GetString("listBox1.Items7"),
-            resources.GetString("listBox1.Items8"),
-            resources.GetString("listBox1.Items9"),
-            resources.GetString("listBox1.Items10"),
-            resources.GetString("listBox1.Items11"),
-            resources.GetString("listBox1.Items12")});
-            this.listBox1.Name = "listBox1";
+            resources.ApplyResources(this.commonFoodListBox, "commonFoodListBox");
+            this.commonFoodListBox.FormattingEnabled = true;
+            this.commonFoodListBox.Name = "commonFoodListBox";
             // 
             // tabPage3
             // 
+            this.tabPage3.Controls.Add(this.favoriteFoodViewButton);
             this.tabPage3.Controls.Add(this.button2);
-            this.tabPage3.Controls.Add(this.listBox2);
+            this.tabPage3.Controls.Add(this.favoriteFoodListBox);
             resources.ApplyResources(this.tabPage3, "tabPage3");
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // favoriteFoodViewButton
+            // 
+            resources.ApplyResources(this.favoriteFoodViewButton, "favoriteFoodViewButton");
+            this.favoriteFoodViewButton.Name = "favoriteFoodViewButton";
+            this.favoriteFoodViewButton.UseVisualStyleBackColor = true;
+            this.favoriteFoodViewButton.Click += new System.EventHandler(this.FavoriteFoodViewButton_Click);
             // 
             // button2
             // 
@@ -311,73 +291,54 @@
             this.button2.Name = "button2";
             this.button2.UseVisualStyleBackColor = true;
             // 
-            // listBox2
+            // favoriteFoodListBox
             // 
-            resources.ApplyResources(this.listBox2, "listBox2");
-            this.listBox2.FormattingEnabled = true;
-            this.listBox2.Items.AddRange(new object[] {
-            resources.GetString("listBox2.Items"),
-            resources.GetString("listBox2.Items1"),
-            resources.GetString("listBox2.Items2"),
-            resources.GetString("listBox2.Items3"),
-            resources.GetString("listBox2.Items4"),
-            resources.GetString("listBox2.Items5"),
-            resources.GetString("listBox2.Items6"),
-            resources.GetString("listBox2.Items7"),
-            resources.GetString("listBox2.Items8"),
-            resources.GetString("listBox2.Items9"),
-            resources.GetString("listBox2.Items10"),
-            resources.GetString("listBox2.Items11"),
-            resources.GetString("listBox2.Items12")});
-            this.listBox2.Name = "listBox2";
+            resources.ApplyResources(this.favoriteFoodListBox, "favoriteFoodListBox");
+            this.favoriteFoodListBox.FormattingEnabled = true;
+            this.favoriteFoodListBox.Name = "favoriteFoodListBox";
             // 
             // tabPage4
             // 
-            this.tabPage4.Controls.Add(this.button5);
-            this.tabPage4.Controls.Add(this.button4);
-            this.tabPage4.Controls.Add(this.button3);
-            this.tabPage4.Controls.Add(this.listBox3);
+            this.tabPage4.Controls.Add(this.customFoodViewButton);
+            this.tabPage4.Controls.Add(this.editCustomFoodButton);
+            this.tabPage4.Controls.Add(this.addCustomFoodButton);
+            this.tabPage4.Controls.Add(this.removeCustomFoodButton);
+            this.tabPage4.Controls.Add(this.customFoodListBox);
             resources.ApplyResources(this.tabPage4, "tabPage4");
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.UseVisualStyleBackColor = true;
             // 
-            // button5
+            // customFoodViewButton
             // 
-            resources.ApplyResources(this.button5, "button5");
-            this.button5.Name = "button5";
-            this.button5.UseVisualStyleBackColor = true;
+            resources.ApplyResources(this.customFoodViewButton, "customFoodViewButton");
+            this.customFoodViewButton.Name = "customFoodViewButton";
+            this.customFoodViewButton.UseVisualStyleBackColor = true;
+            this.customFoodViewButton.Click += new System.EventHandler(this.CustomFoodViewButton_Click);
             // 
-            // button4
+            // editCustomFoodButton
             // 
-            resources.ApplyResources(this.button4, "button4");
-            this.button4.Name = "button4";
-            this.button4.UseVisualStyleBackColor = true;
+            resources.ApplyResources(this.editCustomFoodButton, "editCustomFoodButton");
+            this.editCustomFoodButton.Name = "editCustomFoodButton";
+            this.editCustomFoodButton.UseVisualStyleBackColor = true;
             // 
-            // button3
+            // addCustomFoodButton
             // 
-            resources.ApplyResources(this.button3, "button3");
-            this.button3.Name = "button3";
-            this.button3.UseVisualStyleBackColor = true;
+            resources.ApplyResources(this.addCustomFoodButton, "addCustomFoodButton");
+            this.addCustomFoodButton.Name = "addCustomFoodButton";
+            this.addCustomFoodButton.UseVisualStyleBackColor = true;
+            this.addCustomFoodButton.Click += new System.EventHandler(this.AddCustomFoodButton_Click);
             // 
-            // listBox3
+            // removeCustomFoodButton
             // 
-            resources.ApplyResources(this.listBox3, "listBox3");
-            this.listBox3.FormattingEnabled = true;
-            this.listBox3.Items.AddRange(new object[] {
-            resources.GetString("listBox3.Items"),
-            resources.GetString("listBox3.Items1"),
-            resources.GetString("listBox3.Items2"),
-            resources.GetString("listBox3.Items3"),
-            resources.GetString("listBox3.Items4"),
-            resources.GetString("listBox3.Items5"),
-            resources.GetString("listBox3.Items6"),
-            resources.GetString("listBox3.Items7"),
-            resources.GetString("listBox3.Items8"),
-            resources.GetString("listBox3.Items9"),
-            resources.GetString("listBox3.Items10"),
-            resources.GetString("listBox3.Items11"),
-            resources.GetString("listBox3.Items12")});
-            this.listBox3.Name = "listBox3";
+            resources.ApplyResources(this.removeCustomFoodButton, "removeCustomFoodButton");
+            this.removeCustomFoodButton.Name = "removeCustomFoodButton";
+            this.removeCustomFoodButton.UseVisualStyleBackColor = true;
+            // 
+            // customFoodListBox
+            // 
+            resources.ApplyResources(this.customFoodListBox, "customFoodListBox");
+            this.customFoodListBox.FormattingEnabled = true;
+            this.customFoodListBox.Name = "customFoodListBox";
             // 
             // homeTab
             // 
@@ -734,6 +695,20 @@
             resources.ApplyResources(this.csv, "csv");
             this.csv.Click += new System.EventHandler(this.Csv_Click);
             // 
+            // recipeViewButton
+            // 
+            resources.ApplyResources(this.recipeViewButton, "recipeViewButton");
+            this.recipeViewButton.Name = "recipeViewButton";
+            this.recipeViewButton.UseVisualStyleBackColor = true;
+            this.recipeViewButton.Click += new System.EventHandler(this.RecipeViewButton_Click);
+            // 
+            // planViewButton
+            // 
+            resources.ApplyResources(this.planViewButton, "planViewButton");
+            this.planViewButton.Name = "planViewButton";
+            this.planViewButton.UseVisualStyleBackColor = true;
+            this.planViewButton.Click += new System.EventHandler(this.PlanViewButton_Click);
+            // 
             // NC_StartScreen
             // 
             resources.ApplyResources(this, "$this");
@@ -747,7 +722,6 @@
             this.foodTab.ResumeLayout(false);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
-            this.tabPage1.PerformLayout();
             this.tabPage2.ResumeLayout(false);
             this.tabPage3.ResumeLayout(false);
             this.tabPage4.ResumeLayout(false);
@@ -779,31 +753,30 @@
         private System.Windows.Forms.ColumnHeader columnHeader9;
         private System.Windows.Forms.TabControl tabControl;
         private System.Windows.Forms.Button exportButton;
-        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.TabPage tabPage4;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.ListBox commonFoodListBox;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.ListBox listBox2;
+        private System.Windows.Forms.ListBox favoriteFoodListBox;
         private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.Button addRecipeButton;
         private System.Windows.Forms.Button button8;
-        private System.Windows.Forms.ListBox listBox4;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.ListBox listBox3;
+        private System.Windows.Forms.ListBox recipeListBox;
+        private System.Windows.Forms.Button editCustomFoodButton;
+        private System.Windows.Forms.Button addCustomFoodButton;
+        private System.Windows.Forms.Button removeCustomFoodButton;
+        private System.Windows.Forms.ListBox customFoodListBox;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ListBox listBox6;
+        private System.Windows.Forms.ListBox dayPlanItemsListBox;
         private System.Windows.Forms.Button button9;
         private System.Windows.Forms.Button button10;
         private System.Windows.Forms.Button button11;
-        private System.Windows.Forms.ListBox listBox5;
+        private System.Windows.Forms.ListBox dayPlanListBox;
         private System.Windows.Forms.Button removePlanButtonMon;
         private System.Windows.Forms.ListBox planListBox;
         private System.Windows.Forms.Panel weekPlansPanel;
@@ -823,5 +796,12 @@
         private System.Windows.Forms.ToolStripMenuItem csv;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button cancelPlanButton;
+        private System.Windows.Forms.ComboBox foodSearchComboBox;
+        private System.Windows.Forms.Button foodListViewButton;
+        private System.Windows.Forms.Button commonFoodViewButton;
+        private System.Windows.Forms.Button favoriteFoodViewButton;
+        private System.Windows.Forms.Button customFoodViewButton;
+        private System.Windows.Forms.Button planViewButton;
+        private System.Windows.Forms.Button recipeViewButton;
     }
 }

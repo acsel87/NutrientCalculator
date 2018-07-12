@@ -121,17 +121,44 @@
     <value>True</value>
   </metadata>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="planViewButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="planViewButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>18, 32</value>
+  </data>
+  <data name="planViewButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>123, 41</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="planViewButton.TabIndex" type="System.Int32, mscorlib">
+    <value>13</value>
+  </data>
+  <data name="planViewButton.Text" xml:space="preserve">
+    <value>View</value>
+  </data>
+  <data name="&gt;&gt;planViewButton.Name" xml:space="preserve">
+    <value>planViewButton</value>
+  </data>
+  <data name="&gt;&gt;planViewButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;planViewButton.Parent" xml:space="preserve">
+    <value>dayPlansTab</value>
+  </data>
+  <data name="&gt;&gt;planViewButton.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <data name="label2.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top</value>
   </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="label2.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="label2.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="label2.Location" type="System.Drawing.Point, System.Drawing">
     <value>236, 104</value>
   </data>
@@ -154,7 +181,7 @@
     <value>dayPlansTab</value>
   </data>
   <data name="&gt;&gt;label2.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="label1.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top</value>
@@ -184,82 +211,43 @@
     <value>dayPlansTab</value>
   </data>
   <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
-  <data name="listBox6.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+  <data name="dayPlanItemsListBox.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom</value>
   </data>
-  <data name="listBox6.Font" type="System.Drawing.Font, System.Drawing">
+  <data name="dayPlanItemsListBox.Font" type="System.Drawing.Font, System.Drawing">
     <value>Calibri, 30pt, style=Bold</value>
   </data>
-  <data name="listBox6.ItemHeight" type="System.Int32, mscorlib">
+  <data name="dayPlanItemsListBox.ItemHeight" type="System.Int32, mscorlib">
     <value>49</value>
   </data>
-  <data name="listBox6.Items" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="listBox6.Items1" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="listBox6.Items2" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="listBox6.Items3" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="listBox6.Items4" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="listBox6.Items5" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <data name="listBox6.Items6" xml:space="preserve">
-    <value>7</value>
-  </data>
-  <data name="listBox6.Items7" xml:space="preserve">
-    <value>8</value>
-  </data>
-  <data name="listBox6.Items8" xml:space="preserve">
-    <value>9</value>
-  </data>
-  <data name="listBox6.Items9" xml:space="preserve">
-    <value>10</value>
-  </data>
-  <data name="listBox6.Items10" xml:space="preserve">
-    <value>11</value>
-  </data>
-  <data name="listBox6.Items11" xml:space="preserve">
-    <value>12</value>
-  </data>
-  <data name="listBox6.Items12" xml:space="preserve">
-    <value>13</value>
-  </data>
-  <data name="listBox6.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="dayPlanItemsListBox.Location" type="System.Drawing.Point, System.Drawing">
     <value>640, 157</value>
   </data>
-  <data name="listBox6.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="dayPlanItemsListBox.Size" type="System.Drawing.Size, System.Drawing">
     <value>516, 543</value>
   </data>
-  <data name="listBox6.TabIndex" type="System.Int32, mscorlib">
+  <data name="dayPlanItemsListBox.TabIndex" type="System.Int32, mscorlib">
     <value>10</value>
   </data>
-  <data name="&gt;&gt;listBox6.Name" xml:space="preserve">
-    <value>listBox6</value>
+  <data name="&gt;&gt;dayPlanItemsListBox.Name" xml:space="preserve">
+    <value>dayPlanItemsListBox</value>
   </data>
-  <data name="&gt;&gt;listBox6.Type" xml:space="preserve">
+  <data name="&gt;&gt;dayPlanItemsListBox.Type" xml:space="preserve">
     <value>System.Windows.Forms.ListBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;listBox6.Parent" xml:space="preserve">
+  <data name="&gt;&gt;dayPlanItemsListBox.Parent" xml:space="preserve">
     <value>dayPlansTab</value>
   </data>
-  <data name="&gt;&gt;listBox6.ZOrder" xml:space="preserve">
-    <value>2</value>
+  <data name="&gt;&gt;dayPlanItemsListBox.ZOrder" xml:space="preserve">
+    <value>3</value>
   </data>
   <data name="button9.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <data name="button9.Location" type="System.Drawing.Point, System.Drawing">
-    <value>242, 30</value>
+    <value>766, 30</value>
   </data>
   <data name="button9.Size" type="System.Drawing.Size, System.Drawing">
     <value>182, 44</value>
@@ -280,13 +268,13 @@
     <value>dayPlansTab</value>
   </data>
   <data name="&gt;&gt;button9.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="button10.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <data name="button10.Location" type="System.Drawing.Point, System.Drawing">
-    <value>18, 30</value>
+    <value>542, 30</value>
   </data>
   <data name="button10.Size" type="System.Drawing.Size, System.Drawing">
     <value>182, 44</value>
@@ -307,7 +295,7 @@
     <value>dayPlansTab</value>
   </data>
   <data name="&gt;&gt;button10.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>5</value>
   </data>
   <data name="button11.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Right</value>
@@ -337,76 +325,37 @@
     <value>dayPlansTab</value>
   </data>
   <data name="&gt;&gt;button11.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>6</value>
   </data>
-  <data name="listBox5.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+  <data name="dayPlanListBox.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom</value>
   </data>
-  <data name="listBox5.Font" type="System.Drawing.Font, System.Drawing">
+  <data name="dayPlanListBox.Font" type="System.Drawing.Font, System.Drawing">
     <value>Calibri, 30pt, style=Bold</value>
   </data>
-  <data name="listBox5.ItemHeight" type="System.Int32, mscorlib">
+  <data name="dayPlanListBox.ItemHeight" type="System.Int32, mscorlib">
     <value>49</value>
   </data>
-  <data name="listBox5.Items" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="listBox5.Items1" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="listBox5.Items2" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="listBox5.Items3" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="listBox5.Items4" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="listBox5.Items5" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <data name="listBox5.Items6" xml:space="preserve">
-    <value>7</value>
-  </data>
-  <data name="listBox5.Items7" xml:space="preserve">
-    <value>8</value>
-  </data>
-  <data name="listBox5.Items8" xml:space="preserve">
-    <value>9</value>
-  </data>
-  <data name="listBox5.Items9" xml:space="preserve">
-    <value>10</value>
-  </data>
-  <data name="listBox5.Items10" xml:space="preserve">
-    <value>11</value>
-  </data>
-  <data name="listBox5.Items11" xml:space="preserve">
-    <value>12</value>
-  </data>
-  <data name="listBox5.Items12" xml:space="preserve">
-    <value>13</value>
-  </data>
-  <data name="listBox5.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="dayPlanListBox.Location" type="System.Drawing.Point, System.Drawing">
     <value>18, 157</value>
   </data>
-  <data name="listBox5.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="dayPlanListBox.Size" type="System.Drawing.Size, System.Drawing">
     <value>588, 543</value>
   </data>
-  <data name="listBox5.TabIndex" type="System.Int32, mscorlib">
+  <data name="dayPlanListBox.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
   </data>
-  <data name="&gt;&gt;listBox5.Name" xml:space="preserve">
-    <value>listBox5</value>
+  <data name="&gt;&gt;dayPlanListBox.Name" xml:space="preserve">
+    <value>dayPlanListBox</value>
   </data>
-  <data name="&gt;&gt;listBox5.Type" xml:space="preserve">
+  <data name="&gt;&gt;dayPlanListBox.Type" xml:space="preserve">
     <value>System.Windows.Forms.ListBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;listBox5.Parent" xml:space="preserve">
+  <data name="&gt;&gt;dayPlanListBox.Parent" xml:space="preserve">
     <value>dayPlansTab</value>
   </data>
-  <data name="&gt;&gt;listBox5.ZOrder" xml:space="preserve">
-    <value>6</value>
+  <data name="&gt;&gt;dayPlanListBox.ZOrder" xml:space="preserve">
+    <value>7</value>
   </data>
   <data name="dayPlansTab.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 54</value>
@@ -438,11 +387,38 @@
   <metadata name="recipesTab.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
+  <data name="recipeViewButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="recipeViewButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>8, 34</value>
+  </data>
+  <data name="recipeViewButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>123, 41</value>
+  </data>
+  <data name="recipeViewButton.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="recipeViewButton.Text" xml:space="preserve">
+    <value>View</value>
+  </data>
+  <data name="&gt;&gt;recipeViewButton.Name" xml:space="preserve">
+    <value>recipeViewButton</value>
+  </data>
+  <data name="&gt;&gt;recipeViewButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;recipeViewButton.Parent" xml:space="preserve">
+    <value>recipesTab</value>
+  </data>
+  <data name="&gt;&gt;recipeViewButton.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <data name="button6.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <data name="button6.Location" type="System.Drawing.Point, System.Drawing">
-    <value>232, 32</value>
+    <value>753, 32</value>
   </data>
   <data name="button6.Size" type="System.Drawing.Size, System.Drawing">
     <value>182, 44</value>
@@ -463,34 +439,34 @@
     <value>recipesTab</value>
   </data>
   <data name="&gt;&gt;button6.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
-  <data name="button7.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="addRecipeButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="button7.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 32</value>
+  <data name="addRecipeButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>529, 32</value>
   </data>
-  <data name="button7.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="addRecipeButton.Size" type="System.Drawing.Size, System.Drawing">
     <value>182, 44</value>
   </data>
-  <data name="button7.TabIndex" type="System.Int32, mscorlib">
+  <data name="addRecipeButton.TabIndex" type="System.Int32, mscorlib">
     <value>8</value>
   </data>
-  <data name="button7.Text" xml:space="preserve">
+  <data name="addRecipeButton.Text" xml:space="preserve">
     <value>Add</value>
   </data>
-  <data name="&gt;&gt;button7.Name" xml:space="preserve">
-    <value>button7</value>
+  <data name="&gt;&gt;addRecipeButton.Name" xml:space="preserve">
+    <value>addRecipeButton</value>
   </data>
-  <data name="&gt;&gt;button7.Type" xml:space="preserve">
+  <data name="&gt;&gt;addRecipeButton.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;button7.Parent" xml:space="preserve">
+  <data name="&gt;&gt;addRecipeButton.Parent" xml:space="preserve">
     <value>recipesTab</value>
   </data>
-  <data name="&gt;&gt;button7.ZOrder" xml:space="preserve">
-    <value>1</value>
+  <data name="&gt;&gt;addRecipeButton.ZOrder" xml:space="preserve">
+    <value>2</value>
   </data>
   <data name="button8.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Right</value>
@@ -520,76 +496,37 @@
     <value>recipesTab</value>
   </data>
   <data name="&gt;&gt;button8.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
-  <data name="listBox4.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+  <data name="recipeListBox.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left, Right</value>
   </data>
-  <data name="listBox4.Font" type="System.Drawing.Font, System.Drawing">
+  <data name="recipeListBox.Font" type="System.Drawing.Font, System.Drawing">
     <value>Calibri, 30pt, style=Bold</value>
   </data>
-  <data name="listBox4.ItemHeight" type="System.Int32, mscorlib">
+  <data name="recipeListBox.ItemHeight" type="System.Int32, mscorlib">
     <value>49</value>
   </data>
-  <data name="listBox4.Items" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="listBox4.Items1" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="listBox4.Items2" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="listBox4.Items3" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="listBox4.Items4" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="listBox4.Items5" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <data name="listBox4.Items6" xml:space="preserve">
-    <value>7</value>
-  </data>
-  <data name="listBox4.Items7" xml:space="preserve">
-    <value>8</value>
-  </data>
-  <data name="listBox4.Items8" xml:space="preserve">
-    <value>9</value>
-  </data>
-  <data name="listBox4.Items9" xml:space="preserve">
-    <value>10</value>
-  </data>
-  <data name="listBox4.Items10" xml:space="preserve">
-    <value>11</value>
-  </data>
-  <data name="listBox4.Items11" xml:space="preserve">
-    <value>12</value>
-  </data>
-  <data name="listBox4.Items12" xml:space="preserve">
-    <value>13</value>
-  </data>
-  <data name="listBox4.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="recipeListBox.Location" type="System.Drawing.Point, System.Drawing">
     <value>8, 103</value>
   </data>
-  <data name="listBox4.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="recipeListBox.Size" type="System.Drawing.Size, System.Drawing">
     <value>1150, 592</value>
   </data>
-  <data name="listBox4.TabIndex" type="System.Int32, mscorlib">
+  <data name="recipeListBox.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
   </data>
-  <data name="&gt;&gt;listBox4.Name" xml:space="preserve">
-    <value>listBox4</value>
+  <data name="&gt;&gt;recipeListBox.Name" xml:space="preserve">
+    <value>recipeListBox</value>
   </data>
-  <data name="&gt;&gt;listBox4.Type" xml:space="preserve">
+  <data name="&gt;&gt;recipeListBox.Type" xml:space="preserve">
     <value>System.Windows.Forms.ListBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;listBox4.Parent" xml:space="preserve">
+  <data name="&gt;&gt;recipeListBox.Parent" xml:space="preserve">
     <value>recipesTab</value>
   </data>
-  <data name="&gt;&gt;listBox4.ZOrder" xml:space="preserve">
-    <value>3</value>
+  <data name="&gt;&gt;recipeListBox.ZOrder" xml:space="preserve">
+    <value>4</value>
   </data>
   <data name="recipesTab.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 54</value>
@@ -630,29 +567,59 @@
   <metadata name="tabPage1.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <data name="textBox1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>17, 24</value>
+  <data name="foodListViewButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>821, 25</value>
   </data>
-  <data name="textBox1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>774, 40</value>
+  <data name="foodListViewButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>123, 41</value>
   </data>
-  <data name="textBox1.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
+  <data name="foodListViewButton.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
   </data>
-  <data name="textBox1.Text" xml:space="preserve">
-    <value>Search...</value>
+  <data name="foodListViewButton.Text" xml:space="preserve">
+    <value>View</value>
   </data>
-  <data name="&gt;&gt;textBox1.Name" xml:space="preserve">
-    <value>textBox1</value>
+  <data name="&gt;&gt;foodListViewButton.Name" xml:space="preserve">
+    <value>foodListViewButton</value>
   </data>
-  <data name="&gt;&gt;textBox1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;foodListViewButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;textBox1.Parent" xml:space="preserve">
+  <data name="&gt;&gt;foodListViewButton.Parent" xml:space="preserve">
     <value>tabPage1</value>
   </data>
-  <data name="&gt;&gt;textBox1.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;foodListViewButton.ZOrder" xml:space="preserve">
     <value>0</value>
+  </data>
+  <metadata name="foodSearchComboBox.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="foodSearchComboBox.IntegralHeight" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="foodSearchComboBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 26</value>
+  </data>
+  <data name="foodSearchComboBox.MaxDropDownItems" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="foodSearchComboBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>774, 41</value>
+  </data>
+  <data name="foodSearchComboBox.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;foodSearchComboBox.Name" xml:space="preserve">
+    <value>foodSearchComboBox</value>
+  </data>
+  <data name="&gt;&gt;foodSearchComboBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;foodSearchComboBox.Parent" xml:space="preserve">
+    <value>tabPage1</value>
+  </data>
+  <data name="&gt;&gt;foodSearchComboBox.ZOrder" xml:space="preserve">
+    <value>1</value>
   </data>
   <data name="tabPage1.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 42</value>
@@ -681,6 +648,33 @@
   <data name="&gt;&gt;tabPage1.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
+  <data name="commonFoodViewButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="commonFoodViewButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 24</value>
+  </data>
+  <data name="commonFoodViewButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>123, 41</value>
+  </data>
+  <data name="commonFoodViewButton.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="commonFoodViewButton.Text" xml:space="preserve">
+    <value>View</value>
+  </data>
+  <data name="&gt;&gt;commonFoodViewButton.Name" xml:space="preserve">
+    <value>commonFoodViewButton</value>
+  </data>
+  <data name="&gt;&gt;commonFoodViewButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;commonFoodViewButton.Parent" xml:space="preserve">
+    <value>tabPage2</value>
+  </data>
+  <data name="&gt;&gt;commonFoodViewButton.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <data name="button1.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Right</value>
   </data>
@@ -706,76 +700,37 @@
     <value>tabPage2</value>
   </data>
   <data name="&gt;&gt;button1.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
-  <data name="listBox1.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+  <data name="commonFoodListBox.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left, Right</value>
   </data>
-  <data name="listBox1.Font" type="System.Drawing.Font, System.Drawing">
+  <data name="commonFoodListBox.Font" type="System.Drawing.Font, System.Drawing">
     <value>Calibri, 30pt, style=Bold</value>
   </data>
-  <data name="listBox1.ItemHeight" type="System.Int32, mscorlib">
+  <data name="commonFoodListBox.ItemHeight" type="System.Int32, mscorlib">
     <value>49</value>
   </data>
-  <data name="listBox1.Items" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="listBox1.Items1" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="listBox1.Items2" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="listBox1.Items3" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="listBox1.Items4" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="listBox1.Items5" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <data name="listBox1.Items6" xml:space="preserve">
-    <value>7</value>
-  </data>
-  <data name="listBox1.Items7" xml:space="preserve">
-    <value>8</value>
-  </data>
-  <data name="listBox1.Items8" xml:space="preserve">
-    <value>9</value>
-  </data>
-  <data name="listBox1.Items9" xml:space="preserve">
-    <value>10</value>
-  </data>
-  <data name="listBox1.Items10" xml:space="preserve">
-    <value>11</value>
-  </data>
-  <data name="listBox1.Items11" xml:space="preserve">
-    <value>12</value>
-  </data>
-  <data name="listBox1.Items12" xml:space="preserve">
-    <value>13</value>
-  </data>
-  <data name="listBox1.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="commonFoodListBox.Location" type="System.Drawing.Point, System.Drawing">
     <value>6, 82</value>
   </data>
-  <data name="listBox1.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="commonFoodListBox.Size" type="System.Drawing.Size, System.Drawing">
     <value>1150, 543</value>
   </data>
-  <data name="listBox1.TabIndex" type="System.Int32, mscorlib">
+  <data name="commonFoodListBox.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="&gt;&gt;listBox1.Name" xml:space="preserve">
-    <value>listBox1</value>
+  <data name="&gt;&gt;commonFoodListBox.Name" xml:space="preserve">
+    <value>commonFoodListBox</value>
   </data>
-  <data name="&gt;&gt;listBox1.Type" xml:space="preserve">
+  <data name="&gt;&gt;commonFoodListBox.Type" xml:space="preserve">
     <value>System.Windows.Forms.ListBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;listBox1.Parent" xml:space="preserve">
+  <data name="&gt;&gt;commonFoodListBox.Parent" xml:space="preserve">
     <value>tabPage2</value>
   </data>
-  <data name="&gt;&gt;listBox1.ZOrder" xml:space="preserve">
-    <value>1</value>
+  <data name="&gt;&gt;commonFoodListBox.ZOrder" xml:space="preserve">
+    <value>2</value>
   </data>
   <data name="tabPage2.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 42</value>
@@ -803,6 +758,33 @@
   </data>
   <data name="&gt;&gt;tabPage2.ZOrder" xml:space="preserve">
     <value>1</value>
+  </data>
+  <data name="favoriteFoodViewButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="favoriteFoodViewButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 26</value>
+  </data>
+  <data name="favoriteFoodViewButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>123, 41</value>
+  </data>
+  <data name="favoriteFoodViewButton.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="favoriteFoodViewButton.Text" xml:space="preserve">
+    <value>View</value>
+  </data>
+  <data name="&gt;&gt;favoriteFoodViewButton.Name" xml:space="preserve">
+    <value>favoriteFoodViewButton</value>
+  </data>
+  <data name="&gt;&gt;favoriteFoodViewButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;favoriteFoodViewButton.Parent" xml:space="preserve">
+    <value>tabPage3</value>
+  </data>
+  <data name="&gt;&gt;favoriteFoodViewButton.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <data name="button2.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Right</value>
@@ -832,76 +814,37 @@
     <value>tabPage3</value>
   </data>
   <data name="&gt;&gt;button2.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
-  <data name="listBox2.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+  <data name="favoriteFoodListBox.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left, Right</value>
   </data>
-  <data name="listBox2.Font" type="System.Drawing.Font, System.Drawing">
+  <data name="favoriteFoodListBox.Font" type="System.Drawing.Font, System.Drawing">
     <value>Calibri, 30pt, style=Bold</value>
   </data>
-  <data name="listBox2.ItemHeight" type="System.Int32, mscorlib">
+  <data name="favoriteFoodListBox.ItemHeight" type="System.Int32, mscorlib">
     <value>49</value>
   </data>
-  <data name="listBox2.Items" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="listBox2.Items1" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="listBox2.Items2" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="listBox2.Items3" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="listBox2.Items4" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="listBox2.Items5" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <data name="listBox2.Items6" xml:space="preserve">
-    <value>7</value>
-  </data>
-  <data name="listBox2.Items7" xml:space="preserve">
-    <value>8</value>
-  </data>
-  <data name="listBox2.Items8" xml:space="preserve">
-    <value>9</value>
-  </data>
-  <data name="listBox2.Items9" xml:space="preserve">
-    <value>10</value>
-  </data>
-  <data name="listBox2.Items10" xml:space="preserve">
-    <value>11</value>
-  </data>
-  <data name="listBox2.Items11" xml:space="preserve">
-    <value>12</value>
-  </data>
-  <data name="listBox2.Items12" xml:space="preserve">
-    <value>13</value>
-  </data>
-  <data name="listBox2.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="favoriteFoodListBox.Location" type="System.Drawing.Point, System.Drawing">
     <value>6, 84</value>
   </data>
-  <data name="listBox2.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="favoriteFoodListBox.Size" type="System.Drawing.Size, System.Drawing">
     <value>1150, 543</value>
   </data>
-  <data name="listBox2.TabIndex" type="System.Int32, mscorlib">
+  <data name="favoriteFoodListBox.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
   </data>
-  <data name="&gt;&gt;listBox2.Name" xml:space="preserve">
-    <value>listBox2</value>
+  <data name="&gt;&gt;favoriteFoodListBox.Name" xml:space="preserve">
+    <value>favoriteFoodListBox</value>
   </data>
-  <data name="&gt;&gt;listBox2.Type" xml:space="preserve">
+  <data name="&gt;&gt;favoriteFoodListBox.Type" xml:space="preserve">
     <value>System.Windows.Forms.ListBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;listBox2.Parent" xml:space="preserve">
+  <data name="&gt;&gt;favoriteFoodListBox.Parent" xml:space="preserve">
     <value>tabPage3</value>
   </data>
-  <data name="&gt;&gt;listBox2.ZOrder" xml:space="preserve">
-    <value>1</value>
+  <data name="&gt;&gt;favoriteFoodListBox.ZOrder" xml:space="preserve">
+    <value>2</value>
   </data>
   <data name="tabPage3.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 42</value>
@@ -927,155 +870,143 @@
   <data name="&gt;&gt;tabPage3.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
-  <data name="button5.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="customFoodViewButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="button5.Location" type="System.Drawing.Point, System.Drawing">
-    <value>230, 23</value>
+  <data name="customFoodViewButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 25</value>
   </data>
-  <data name="button5.Size" type="System.Drawing.Size, System.Drawing">
-    <value>182, 44</value>
+  <data name="customFoodViewButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>123, 41</value>
   </data>
-  <data name="button5.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
-  </data>
-  <data name="button5.Text" xml:space="preserve">
-    <value>Edit</value>
-  </data>
-  <data name="&gt;&gt;button5.Name" xml:space="preserve">
-    <value>button5</value>
-  </data>
-  <data name="&gt;&gt;button5.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;button5.Parent" xml:space="preserve">
-    <value>tabPage4</value>
-  </data>
-  <data name="&gt;&gt;button5.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="button4.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 23</value>
-  </data>
-  <data name="button4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>182, 44</value>
-  </data>
-  <data name="button4.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="button4.Text" xml:space="preserve">
-    <value>Add</value>
-  </data>
-  <data name="&gt;&gt;button4.Name" xml:space="preserve">
-    <value>button4</value>
-  </data>
-  <data name="&gt;&gt;button4.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;button4.Parent" xml:space="preserve">
-    <value>tabPage4</value>
-  </data>
-  <data name="&gt;&gt;button4.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="button3.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Right</value>
-  </data>
-  <data name="button3.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="button3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>974, 23</value>
-  </data>
-  <data name="button3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>182, 44</value>
-  </data>
-  <data name="button3.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="button3.Text" xml:space="preserve">
-    <value>Remove</value>
-  </data>
-  <data name="&gt;&gt;button3.Name" xml:space="preserve">
-    <value>button3</value>
-  </data>
-  <data name="&gt;&gt;button3.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;button3.Parent" xml:space="preserve">
-    <value>tabPage4</value>
-  </data>
-  <data name="&gt;&gt;button3.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="listBox3.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Bottom, Left, Right</value>
-  </data>
-  <data name="listBox3.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Calibri, 30pt, style=Bold</value>
-  </data>
-  <data name="listBox3.ItemHeight" type="System.Int32, mscorlib">
-    <value>49</value>
-  </data>
-  <data name="listBox3.Items" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="listBox3.Items1" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="listBox3.Items2" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="listBox3.Items3" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="listBox3.Items4" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="listBox3.Items5" xml:space="preserve">
+  <data name="customFoodViewButton.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
   </data>
-  <data name="listBox3.Items6" xml:space="preserve">
-    <value>7</value>
+  <data name="customFoodViewButton.Text" xml:space="preserve">
+    <value>View</value>
   </data>
-  <data name="listBox3.Items7" xml:space="preserve">
-    <value>8</value>
+  <data name="&gt;&gt;customFoodViewButton.Name" xml:space="preserve">
+    <value>customFoodViewButton</value>
   </data>
-  <data name="listBox3.Items8" xml:space="preserve">
-    <value>9</value>
+  <data name="&gt;&gt;customFoodViewButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="listBox3.Items9" xml:space="preserve">
-    <value>10</value>
-  </data>
-  <data name="listBox3.Items10" xml:space="preserve">
-    <value>11</value>
-  </data>
-  <data name="listBox3.Items11" xml:space="preserve">
-    <value>12</value>
-  </data>
-  <data name="listBox3.Items12" xml:space="preserve">
-    <value>13</value>
-  </data>
-  <data name="listBox3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 84</value>
-  </data>
-  <data name="listBox3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1150, 543</value>
-  </data>
-  <data name="listBox3.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;listBox3.Name" xml:space="preserve">
-    <value>listBox3</value>
-  </data>
-  <data name="&gt;&gt;listBox3.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ListBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;listBox3.Parent" xml:space="preserve">
+  <data name="&gt;&gt;customFoodViewButton.Parent" xml:space="preserve">
     <value>tabPage4</value>
   </data>
-  <data name="&gt;&gt;listBox3.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;customFoodViewButton.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="editCustomFoodButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="editCustomFoodButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>749, 23</value>
+  </data>
+  <data name="editCustomFoodButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>182, 44</value>
+  </data>
+  <data name="editCustomFoodButton.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="editCustomFoodButton.Text" xml:space="preserve">
+    <value>Edit</value>
+  </data>
+  <data name="&gt;&gt;editCustomFoodButton.Name" xml:space="preserve">
+    <value>editCustomFoodButton</value>
+  </data>
+  <data name="&gt;&gt;editCustomFoodButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;editCustomFoodButton.Parent" xml:space="preserve">
+    <value>tabPage4</value>
+  </data>
+  <data name="&gt;&gt;editCustomFoodButton.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="addCustomFoodButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>525, 23</value>
+  </data>
+  <data name="addCustomFoodButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>182, 44</value>
+  </data>
+  <data name="addCustomFoodButton.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="addCustomFoodButton.Text" xml:space="preserve">
+    <value>Add</value>
+  </data>
+  <data name="&gt;&gt;addCustomFoodButton.Name" xml:space="preserve">
+    <value>addCustomFoodButton</value>
+  </data>
+  <data name="&gt;&gt;addCustomFoodButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;addCustomFoodButton.Parent" xml:space="preserve">
+    <value>tabPage4</value>
+  </data>
+  <data name="&gt;&gt;addCustomFoodButton.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="removeCustomFoodButton.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Right</value>
+  </data>
+  <data name="removeCustomFoodButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="removeCustomFoodButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>974, 23</value>
+  </data>
+  <data name="removeCustomFoodButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>182, 44</value>
+  </data>
+  <data name="removeCustomFoodButton.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
+  </data>
+  <data name="removeCustomFoodButton.Text" xml:space="preserve">
+    <value>Remove</value>
+  </data>
+  <data name="&gt;&gt;removeCustomFoodButton.Name" xml:space="preserve">
+    <value>removeCustomFoodButton</value>
+  </data>
+  <data name="&gt;&gt;removeCustomFoodButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;removeCustomFoodButton.Parent" xml:space="preserve">
+    <value>tabPage4</value>
+  </data>
+  <data name="&gt;&gt;removeCustomFoodButton.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="customFoodListBox.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left, Right</value>
+  </data>
+  <data name="customFoodListBox.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Calibri, 30pt, style=Bold</value>
+  </data>
+  <data name="customFoodListBox.ItemHeight" type="System.Int32, mscorlib">
+    <value>49</value>
+  </data>
+  <data name="customFoodListBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 84</value>
+  </data>
+  <data name="customFoodListBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1150, 543</value>
+  </data>
+  <data name="customFoodListBox.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;customFoodListBox.Name" xml:space="preserve">
+    <value>customFoodListBox</value>
+  </data>
+  <data name="&gt;&gt;customFoodListBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ListBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;customFoodListBox.Parent" xml:space="preserve">
+    <value>tabPage4</value>
+  </data>
+  <data name="&gt;&gt;customFoodListBox.ZOrder" xml:space="preserve">
+    <value>4</value>
   </data>
   <data name="tabPage4.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 42</value>

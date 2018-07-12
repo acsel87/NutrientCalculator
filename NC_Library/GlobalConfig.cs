@@ -9,7 +9,8 @@ namespace NC_Library
 {
     public static class GlobalConfig
     {
-        public static string custom = "Custom";
+        public static string common = "Common";
+        public static string favorite = "Favorite";
 
         public static string[] dailyValues = new string[32] {
             "2000", "121", "130", "75.6", "38", "1000", "25", "8", "400","700", "4700",

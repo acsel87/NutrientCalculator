@@ -63,6 +63,7 @@
     <Compile Include="NC_Logic.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ScreenShotControl.cs" />
+    <Compile Include="SqlExtensions.cs" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

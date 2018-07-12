@@ -19,6 +19,7 @@ namespace NC_Library.DataAccess
             {
                 var p = new DynamicParameters();
                 p.Add("@Name", model.Name);
+                p.Add("@IsCustom", Convert.ToInt32(model.IsCustom));
                 p.Add("@Type", model.Type);
                 p.Add("@Nutrient_List", model.Nutrient_List);                
                 p.Add("@id", 0, dbType: DbType.Int32, direction: ParameterDirection.Output);
@@ -99,7 +100,7 @@ namespace NC_Library.DataAccess
 
         public void DeleteFood(FoodModel model)
         {
-            if (model.Type == GlobalConfig.custom)
+            if (Convert.ToInt32(model.IsCustom) == 1)
             {
                 using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(GlobalConfig.CnnString(db)))
                 {
@@ -112,7 +113,11 @@ namespace NC_Library.DataAccess
 
                     connection.Execute("dbo.spFood_Delete", p, commandType: CommandType.StoredProcedure);
                 }
-            }            
+            }
+            else
+            {
+                System.Windows.Forms.MessageBox.Show("Error: Only Custom food can be updated");
+            }
         }
 
         public void DeletePlan(PlanModel model)
@@ -208,16 +213,23 @@ namespace NC_Library.DataAccess
 
         public void UpdateFood(FoodModel model)
         {
-            using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(GlobalConfig.CnnString(db)))
+            if (Convert.ToInt32(model.IsCustom) == 1)
             {
-                var p = new DynamicParameters();
-                p.Add("@Name", model.Name);
-                p.Add("@Type", model.Type);
-                p.Add("@Nutrient_List", model.Nutrient_List);
-                p.Add("@Id", model.Id);
+                using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(GlobalConfig.CnnString(db)))
+                {
+                    var p = new DynamicParameters();
+                    p.Add("@Name", model.Name);
+                    p.Add("@Type", model.Type);
+                    p.Add("@Nutrient_List", model.Nutrient_List);
+                    p.Add("@Id", model.Id);
 
-                connection.Execute("dbo.spFood_Update", p, commandType: CommandType.StoredProcedure);
+                    connection.Execute("dbo.spFood_Update", p, commandType: CommandType.StoredProcedure);
+                }
             }
+            else
+            {
+                System.Windows.Forms.MessageBox.Show("Error: Only Custom food can be deleted");
+            }            
         }
 
         public void UpdatePlan(PlanModel model)
@@ -290,37 +302,43 @@ namespace NC_Library.DataAccess
 
         public FoodModel ViewFood(FoodModel model)
         {
-            using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(GlobalConfig.CnnString(db)))
+            if (model != null && model.Id != 0)
             {
-                var p = new DynamicParameters();
-                p.Add("@Id", model.Id);
+                using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(GlobalConfig.CnnString(db)))
+                {
+                    var p = new DynamicParameters();
+                    p.Add("@Id", model.Id);
 
-                model = connection.Query<FoodModel>("dbo.spFood_GetById", p, commandType: CommandType.StoredProcedure).First();
-            }
+                    model = connection.Query<FoodModel>("dbo.spFood_GetById", p, commandType: CommandType.StoredProcedure).First();
+                }
+            }           
 
             return model;
         }
 
         public PlanModel ViewPlan(PlanModel model)
         {
-            using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(GlobalConfig.CnnString(db)))
+            if (model != null && model.Id != 0)
             {
-                var p = new DynamicParameters();
-                p.Add("@Id", model.Id);
-
-                model = connection.Query<PlanModel>("dbo.spPlan_GetById", p, commandType: CommandType.StoredProcedure).First();
-
-                model.FoodList = connection.Query<FoodModel>("dbo.spPlanItems_GetFood", p, commandType: CommandType.StoredProcedure).ToList();
-
-                model.RecipeList = connection.Query<RecipeModel>("dbo.spPlanItems_GetRecipe", p, commandType: CommandType.StoredProcedure).ToList();
-
-                foreach (RecipeModel r in model.RecipeList)
+                using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(GlobalConfig.CnnString(db)))
                 {
-                    p = new DynamicParameters();
-                    p.Add("@Id", r.Id);
+                    var p = new DynamicParameters();
+                    p.Add("@Id", model.Id);
 
-                    r.FoodList = connection.Query<FoodModel>("dbo.spRecipeItems_GetFood", p, commandType: CommandType.StoredProcedure).ToList();
-                }
+                    model = connection.Query<PlanModel>("dbo.spPlan_GetById", p, commandType: CommandType.StoredProcedure).First();
+
+                    model.FoodList = connection.Query<FoodModel>("dbo.spPlanItems_GetFood", p, commandType: CommandType.StoredProcedure).ToList();
+
+                    model.RecipeList = connection.Query<RecipeModel>("dbo.spPlanItems_GetRecipe", p, commandType: CommandType.StoredProcedure).ToList();
+
+                    foreach (RecipeModel r in model.RecipeList)
+                    {
+                        p = new DynamicParameters();
+                        p.Add("@Id", r.Id);
+
+                        r.FoodList = connection.Query<FoodModel>("dbo.spRecipeItems_GetFood", p, commandType: CommandType.StoredProcedure).ToList();
+                    }
+                } 
             }
 
             return model;
@@ -328,14 +346,17 @@ namespace NC_Library.DataAccess
 
         public RecipeModel ViewRecipe(RecipeModel model)
         {
-            using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(GlobalConfig.CnnString(db)))
+            if (model != null && model.Id != 0)
             {
-                var p = new DynamicParameters();
-                p.Add("@Id", model.Id);
+                using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(GlobalConfig.CnnString(db)))
+                {
+                    var p = new DynamicParameters();
+                    p.Add("@Id", model.Id);
 
-                model = connection.Query<RecipeModel>("dbo.spRecipe_GetById", p, commandType: CommandType.StoredProcedure).First();
+                    model = connection.Query<RecipeModel>("dbo.spRecipe_GetById", p, commandType: CommandType.StoredProcedure).First();
 
-                model.FoodList = connection.Query<FoodModel>("dbo.spRecipeItems_GetFood", p, commandType: CommandType.StoredProcedure).ToList();
+                    model.FoodList = connection.Query<FoodModel>("dbo.spRecipeItems_GetFood", p, commandType: CommandType.StoredProcedure).ToList();
+                } 
             }
 
             return model;

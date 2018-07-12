@@ -63,11 +63,11 @@
     <Compile Include="NC_CreateRecipe.Designer.cs">
       <DependentUpon>NC_CreateRecipe.cs</DependentUpon>
     </Compile>
-    <Compile Include="NC_FoodInfo.cs">
+    <Compile Include="NC_NutrientInfo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="NC_FoodInfo.Designer.cs">
-      <DependentUpon>NC_FoodInfo.cs</DependentUpon>
+    <Compile Include="NC_NutrientInfo.Designer.cs">
+      <DependentUpon>NC_NutrientInfo.cs</DependentUpon>
     </Compile>
     <Compile Include="NC_StartScreen.cs">
       <SubType>Form</SubType>
@@ -86,8 +86,8 @@
     <EmbeddedResource Include="NC_CreateRecipe.resx">
       <DependentUpon>NC_CreateRecipe.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="NC_FoodInfo.resx">
-      <DependentUpon>NC_FoodInfo.cs</DependentUpon>
+    <EmbeddedResource Include="NC_NutrientInfo.resx">
+      <DependentUpon>NC_NutrientInfo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NC_StartScreen.resx">
       <DependentUpon>NC_StartScreen.cs</DependentUpon>

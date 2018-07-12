@@ -10,10 +10,19 @@ namespace NC_Library.Models
     {
         public int Id { get; set; }
         public string Name { get; set; }
+        public bool IsCustom { get; set; }
         public string Type { get; set; }
         public string Nutrient_List { get; set; }
 
-        public decimal[] NutrientDecimalList()
+        public decimal[] NutrientList
+        {
+            get
+            {
+                return GetNutrientList();
+            }
+        }
+
+        public decimal[] GetNutrientList()
         {
             decimal[] nutrientsDecimal = new decimal[32];
 
@@ -23,28 +32,13 @@ namespace NC_Library.Models
 
                 for (int i = 0; i < nutrientValues.Length; i++)
                 {
-                    nutrientsDecimal[i] = Math.Round(decimal.Parse(nutrientValues[i]),2);
+                    decimal temp = 0M;
+                    decimal.TryParse(nutrientValues[i], out temp);
+                    nutrientsDecimal[i] = Math.Round(temp, 2);
                 }                
             }
 
             return nutrientsDecimal;
         }
-
-        //public string NutrientsToString()
-        //{
-        //    string nutrientsString = "";
-
-        //    if (NutrientDecimalList != null)
-        //    {
-        //        foreach (decimal d in NutrientDecimalList)
-        //        {
-        //            nutrientsString += $"{d};";
-        //        }
-
-        //       nutrientsString = nutrientsString.Remove(nutrientsString.Length - 1 , 1);
-        //    }
-
-        //    return nutrientsString;
-        //}
     }
 }

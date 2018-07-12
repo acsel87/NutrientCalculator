@@ -29,7 +29,7 @@ namespace NC_Library.Models
             {
                 foreach (FoodModel f in FoodList)
                 {
-                    nutrients.AddDecimalArray(f.NutrientDecimalList());
+                    nutrients.AddDecimalArray(f.NutrientList);
                 }
             }
             return nutrients;

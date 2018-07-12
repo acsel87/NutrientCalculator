@@ -58,8 +58,6 @@ namespace NC_Library.DataAccess
 
                     originalFoodModels.Add(foodModel);
                 }
-
-                Console.ReadLine();
             }
         }
     }
