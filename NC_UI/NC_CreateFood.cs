@@ -15,9 +15,11 @@ namespace NC_UI
 {
     public partial class NC_CreateFood : Form
     {
+        SqlConnector sql = new SqlConnector();
+
         public FoodModel Food { get; set; }
 
-        SqlConnector sql = new SqlConnector();
+        public bool updateData = false;
 
         public NC_CreateFood(FoodModel model)
         {
@@ -25,22 +27,17 @@ namespace NC_UI
 
             Food = model;
 
-            if (Food.Type == null)
-            {
-                Food.Type = "";
-            }
-
-            InitializeBindings();
-            
+            InitializeBindings();            
         }
 
         private void FoodNameTextBox_Enter(object sender, EventArgs e)
         {
             if (foodNameTextBox.Text == (string)foodNameTextBox.Tag)
             {
-                foodNameTextBox.Text = "";
-                foodNameTextBox.ForeColor = Color.Black;
+                foodNameTextBox.Text = "";                
             }
+
+            foodNameTextBox.ForeColor = Color.Black;
         }
 
         private void FoodNameTextBox_Leave(object sender, EventArgs e)
@@ -54,6 +51,13 @@ namespace NC_UI
 
         private void InitializeBindings()
         {
+            foodNameTextBox.Text = Food.Name;
+
+            if (Food.Type == null)
+            {
+                Food.Type = "";
+            }
+
             if (Food.Id != 0)
             {
                 createButton.Enabled = false;
@@ -65,7 +69,7 @@ namespace NC_UI
                 saveButton.Enabled = false;
             }
 
-            Food = sql.ViewFood(Food);
+            //Food = sql.ViewFood(Food); - food infor already in reference
 
             foreach (string s in GlobalConfig.nutrientList)
             {
@@ -125,9 +129,11 @@ namespace NC_UI
 
                 Food.Nutrient_List = Food.Nutrient_List.Remove(Food.Nutrient_List.Length - 1);
 
-                sql.CreateFood(Food);               
+                sql.CreateFood(Food);
 
-                Close();
+                updateData = true;
+
+                Close();                
             }
         }
 
@@ -135,6 +141,29 @@ namespace NC_UI
         {
             Close();
             Dispose();
+        }
+
+        private void SaveButton_Click(object sender, EventArgs e)
+        {
+            if (CheckFrom())
+            {
+                Food.Name = foodNameTextBox.Text;
+
+                Food.Nutrient_List = "";
+
+                for (int i = 0; i < GlobalConfig.nutrientList.Length; i++)
+                {
+                    Food.Nutrient_List += $"{ Math.Round(decimal.Parse(nutrientsDataGridView.Rows[i].Cells[1].FormattedValue.ToString()), 2).ToString("0.##") };";
+                }
+
+                Food.Nutrient_List = Food.Nutrient_List.Remove(Food.Nutrient_List.Length - 1);
+
+                sql.UpdateFood(Food);
+
+                updateData = true;
+
+                Close();                
+            }
         }
     }
 }

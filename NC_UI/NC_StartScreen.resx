@@ -567,28 +567,28 @@
   <metadata name="tabPage1.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <data name="foodListViewButton.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="viewFoodListButton.Location" type="System.Drawing.Point, System.Drawing">
     <value>821, 25</value>
   </data>
-  <data name="foodListViewButton.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="viewFoodListButton.Size" type="System.Drawing.Size, System.Drawing">
     <value>123, 41</value>
   </data>
-  <data name="foodListViewButton.TabIndex" type="System.Int32, mscorlib">
+  <data name="viewFoodListButton.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
   </data>
-  <data name="foodListViewButton.Text" xml:space="preserve">
+  <data name="viewFoodListButton.Text" xml:space="preserve">
     <value>View</value>
   </data>
-  <data name="&gt;&gt;foodListViewButton.Name" xml:space="preserve">
-    <value>foodListViewButton</value>
+  <data name="&gt;&gt;viewFoodListButton.Name" xml:space="preserve">
+    <value>viewFoodListButton</value>
   </data>
-  <data name="&gt;&gt;foodListViewButton.Type" xml:space="preserve">
+  <data name="&gt;&gt;viewFoodListButton.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;foodListViewButton.Parent" xml:space="preserve">
+  <data name="&gt;&gt;viewFoodListButton.Parent" xml:space="preserve">
     <value>tabPage1</value>
   </data>
-  <data name="&gt;&gt;foodListViewButton.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;viewFoodListButton.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <metadata name="foodSearchComboBox.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
@@ -648,58 +648,58 @@
   <data name="&gt;&gt;tabPage1.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="commonFoodViewButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="viewCommonFoodButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="commonFoodViewButton.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="viewCommonFoodButton.Location" type="System.Drawing.Point, System.Drawing">
     <value>6, 24</value>
   </data>
-  <data name="commonFoodViewButton.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="viewCommonFoodButton.Size" type="System.Drawing.Size, System.Drawing">
     <value>123, 41</value>
   </data>
-  <data name="commonFoodViewButton.TabIndex" type="System.Int32, mscorlib">
+  <data name="viewCommonFoodButton.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
   </data>
-  <data name="commonFoodViewButton.Text" xml:space="preserve">
+  <data name="viewCommonFoodButton.Text" xml:space="preserve">
     <value>View</value>
   </data>
-  <data name="&gt;&gt;commonFoodViewButton.Name" xml:space="preserve">
-    <value>commonFoodViewButton</value>
+  <data name="&gt;&gt;viewCommonFoodButton.Name" xml:space="preserve">
+    <value>viewCommonFoodButton</value>
   </data>
-  <data name="&gt;&gt;commonFoodViewButton.Type" xml:space="preserve">
+  <data name="&gt;&gt;viewCommonFoodButton.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;commonFoodViewButton.Parent" xml:space="preserve">
+  <data name="&gt;&gt;viewCommonFoodButton.Parent" xml:space="preserve">
     <value>tabPage2</value>
   </data>
-  <data name="&gt;&gt;commonFoodViewButton.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;viewCommonFoodButton.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="button1.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+  <data name="removeCommonFoodButton.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Right</value>
   </data>
-  <data name="button1.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="removeCommonFoodButton.Location" type="System.Drawing.Point, System.Drawing">
     <value>974, 22</value>
   </data>
-  <data name="button1.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="removeCommonFoodButton.Size" type="System.Drawing.Size, System.Drawing">
     <value>182, 44</value>
   </data>
-  <data name="button1.TabIndex" type="System.Int32, mscorlib">
+  <data name="removeCommonFoodButton.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
-  <data name="button1.Text" xml:space="preserve">
+  <data name="removeCommonFoodButton.Text" xml:space="preserve">
     <value>Remove</value>
   </data>
-  <data name="&gt;&gt;button1.Name" xml:space="preserve">
-    <value>button1</value>
+  <data name="&gt;&gt;removeCommonFoodButton.Name" xml:space="preserve">
+    <value>removeCommonFoodButton</value>
   </data>
-  <data name="&gt;&gt;button1.Type" xml:space="preserve">
+  <data name="&gt;&gt;removeCommonFoodButton.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;button1.Parent" xml:space="preserve">
+  <data name="&gt;&gt;removeCommonFoodButton.Parent" xml:space="preserve">
     <value>tabPage2</value>
   </data>
-  <data name="&gt;&gt;button1.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;removeCommonFoodButton.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
   <data name="commonFoodListBox.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
@@ -759,61 +759,61 @@
   <data name="&gt;&gt;tabPage2.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="favoriteFoodViewButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="viewFavoriteFoodButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="favoriteFoodViewButton.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="viewFavoriteFoodButton.Location" type="System.Drawing.Point, System.Drawing">
     <value>6, 26</value>
   </data>
-  <data name="favoriteFoodViewButton.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="viewFavoriteFoodButton.Size" type="System.Drawing.Size, System.Drawing">
     <value>123, 41</value>
   </data>
-  <data name="favoriteFoodViewButton.TabIndex" type="System.Int32, mscorlib">
+  <data name="viewFavoriteFoodButton.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
   </data>
-  <data name="favoriteFoodViewButton.Text" xml:space="preserve">
+  <data name="viewFavoriteFoodButton.Text" xml:space="preserve">
     <value>View</value>
   </data>
-  <data name="&gt;&gt;favoriteFoodViewButton.Name" xml:space="preserve">
-    <value>favoriteFoodViewButton</value>
+  <data name="&gt;&gt;viewFavoriteFoodButton.Name" xml:space="preserve">
+    <value>viewFavoriteFoodButton</value>
   </data>
-  <data name="&gt;&gt;favoriteFoodViewButton.Type" xml:space="preserve">
+  <data name="&gt;&gt;viewFavoriteFoodButton.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;favoriteFoodViewButton.Parent" xml:space="preserve">
+  <data name="&gt;&gt;viewFavoriteFoodButton.Parent" xml:space="preserve">
     <value>tabPage3</value>
   </data>
-  <data name="&gt;&gt;favoriteFoodViewButton.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;viewFavoriteFoodButton.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="button2.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+  <data name="removeFavoriteFoodButton.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Right</value>
   </data>
-  <data name="button2.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="removeFavoriteFoodButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="button2.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="removeFavoriteFoodButton.Location" type="System.Drawing.Point, System.Drawing">
     <value>974, 24</value>
   </data>
-  <data name="button2.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="removeFavoriteFoodButton.Size" type="System.Drawing.Size, System.Drawing">
     <value>182, 44</value>
   </data>
-  <data name="button2.TabIndex" type="System.Int32, mscorlib">
+  <data name="removeFavoriteFoodButton.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
   </data>
-  <data name="button2.Text" xml:space="preserve">
+  <data name="removeFavoriteFoodButton.Text" xml:space="preserve">
     <value>Remove</value>
   </data>
-  <data name="&gt;&gt;button2.Name" xml:space="preserve">
-    <value>button2</value>
+  <data name="&gt;&gt;removeFavoriteFoodButton.Name" xml:space="preserve">
+    <value>removeFavoriteFoodButton</value>
   </data>
-  <data name="&gt;&gt;button2.Type" xml:space="preserve">
+  <data name="&gt;&gt;removeFavoriteFoodButton.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;button2.Parent" xml:space="preserve">
+  <data name="&gt;&gt;removeFavoriteFoodButton.Parent" xml:space="preserve">
     <value>tabPage3</value>
   </data>
-  <data name="&gt;&gt;button2.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;removeFavoriteFoodButton.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
   <data name="favoriteFoodListBox.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
@@ -870,31 +870,31 @@
   <data name="&gt;&gt;tabPage3.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
-  <data name="customFoodViewButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="viewCustomFoodButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="customFoodViewButton.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="viewCustomFoodButton.Location" type="System.Drawing.Point, System.Drawing">
     <value>6, 25</value>
   </data>
-  <data name="customFoodViewButton.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="viewCustomFoodButton.Size" type="System.Drawing.Size, System.Drawing">
     <value>123, 41</value>
   </data>
-  <data name="customFoodViewButton.TabIndex" type="System.Int32, mscorlib">
+  <data name="viewCustomFoodButton.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
   </data>
-  <data name="customFoodViewButton.Text" xml:space="preserve">
+  <data name="viewCustomFoodButton.Text" xml:space="preserve">
     <value>View</value>
   </data>
-  <data name="&gt;&gt;customFoodViewButton.Name" xml:space="preserve">
-    <value>customFoodViewButton</value>
+  <data name="&gt;&gt;viewCustomFoodButton.Name" xml:space="preserve">
+    <value>viewCustomFoodButton</value>
   </data>
-  <data name="&gt;&gt;customFoodViewButton.Type" xml:space="preserve">
+  <data name="&gt;&gt;viewCustomFoodButton.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;customFoodViewButton.Parent" xml:space="preserve">
+  <data name="&gt;&gt;viewCustomFoodButton.Parent" xml:space="preserve">
     <value>tabPage4</value>
   </data>
-  <data name="&gt;&gt;customFoodViewButton.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;viewCustomFoodButton.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <data name="editCustomFoodButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">

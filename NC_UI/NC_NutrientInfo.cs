@@ -14,13 +14,15 @@ namespace NC_UI
 {
     public partial class NC_NutrientInfo : Form
     {
+        public string testText = "123Test";
+
         private FoodModel Food { get; set; } = new FoodModel();
         private RecipeModel Recipe { get; set; } = new RecipeModel();
         private PlanModel Plan { get; set; } = new PlanModel();
 
-        private Label[] mainLabels = new Label[7];        
+        private Label[] mainLabels = new Label[7];
 
-        private bool changedType = false;
+        public bool updateData = false;
 
         public NC_NutrientInfo(FoodModel model)
         {
@@ -122,7 +124,7 @@ namespace NC_UI
 
             addCommonButton.Enabled = false;
 
-            changedType = true;
+            updateData = true;
         }
 
         private void AddFavoritesButton_Click(object sender, EventArgs e)
@@ -133,20 +135,19 @@ namespace NC_UI
 
             addFavoritesButton.Enabled = false;
 
-            changedType = true;
+            updateData = true;
         }
 
         private void CloseButton_Click(object sender, EventArgs e)
         {
-            if (changedType)
+            if (updateData)
             {
                 NC_Library.DataAccess.SqlConnector sql = new NC_Library.DataAccess.SqlConnector();
 
                 sql.UpdateFood(Food);
             }
 
-            Close();
-            Dispose();
+            Close();           
         }
 
         private void InitializeData(decimal[] tempNutrients)

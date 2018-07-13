@@ -45,9 +45,11 @@ namespace NC_UI
         {
             InitializeComponent();
 
-            InitializeData();            
+            //InitializeData();            
 
-            InitializeLists();
+            //InitializeLists();
+
+            UpdateData();
 
             UpdateWeek(Week);
         }
@@ -83,12 +85,20 @@ namespace NC_UI
                 commonFoodListBox.ValueMember = "Id";
                 commonFoodListBox.DataSource = new BindingSource(AvailableCommonFood.Values, null);
             }
+            else
+            {
+                commonFoodListBox.DataSource = null;                
+            }
 
             if (AvailableFavoriteFood.Count != 0)
             {
                 favoriteFoodListBox.DisplayMember = "Name";
                 favoriteFoodListBox.ValueMember = "Id";
                 favoriteFoodListBox.DataSource = new BindingSource(AvailableFavoriteFood.Values, null);
+            }
+            else
+            {
+                favoriteFoodListBox.DataSource = null;                
             }
 
             if (AvailableCustomFood.Count != 0)
@@ -97,6 +107,11 @@ namespace NC_UI
                 customFoodListBox.ValueMember = "Id";
                 customFoodListBox.DataSource = new BindingSource(AvailableCustomFood.Values, null);
             }
+            else
+            {
+                customFoodListBox.DataSource = null;
+            }
+
 
             if (AvailableRecipes.Count != 0)
             {
@@ -104,12 +119,22 @@ namespace NC_UI
                 recipeListBox.ValueMember = "Id";
                 recipeListBox.DataSource = new BindingSource(AvailableRecipes.Values, null);
             }
+            else
+            {
+                recipeListBox.DataSource = null;
+            }
 
             if (AvailablePlans.Count != 0)
             {
                 dayPlanListBox.DisplayMember = "Name";
                 dayPlanListBox.ValueMember = "Id";
                 dayPlanListBox.DataSource = new BindingSource(AvailablePlans.Values, null);
+                planListBox = dayPlanListBox;
+            }
+            else
+            {
+                dayPlanListBox.DataSource = null;
+                planListBox.DataSource = null;
             }
         }
 
@@ -243,7 +268,13 @@ namespace NC_UI
         private void AddCustomFoodButton_Click(object sender, EventArgs e)
         {
             NC_CreateFood form = new NC_CreateFood(new FoodModel { IsCustom = true });
-            form.ShowDialog();
+
+            if (form.ShowDialog(this) != DialogResult.OK && form.updateData)
+            {
+                UpdateData();
+            }
+
+            form.Dispose();
         }
 
         private void AddRecipeButton(object sender, EventArgs e)
@@ -257,7 +288,13 @@ namespace NC_UI
             if (foodSearchComboBox.SelectedItem != null)
             {
                 NC_NutrientInfo form = new NC_NutrientInfo(AvailableFood[int.Parse(foodSearchComboBox.SelectedValue.ToString())]);
-                form.ShowDialog();
+
+                if (form.ShowDialog(this) != DialogResult.OK && form.updateData)
+                {
+                    UpdateData();
+                }
+
+                form.Dispose();
             }
         }
 
@@ -265,8 +302,14 @@ namespace NC_UI
         {
             if (commonFoodListBox.SelectedItem != null)
             {
-                NC_NutrientInfo form = new NC_NutrientInfo(AvailableFood[int.Parse(commonFoodListBox.SelectedValue.ToString())]);
-                form.ShowDialog();
+                NC_NutrientInfo form = new NC_NutrientInfo(AvailableCommonFood[int.Parse(commonFoodListBox.SelectedValue.ToString())]);
+
+                if (form.ShowDialog(this) != DialogResult.OK && form.updateData)
+                {
+                    UpdateData();
+                }
+
+                form.Dispose();
             }
         }
 
@@ -274,8 +317,14 @@ namespace NC_UI
         {
             if (favoriteFoodListBox.SelectedItem != null)
             {
-                NC_NutrientInfo form = new NC_NutrientInfo(AvailableFood[int.Parse(favoriteFoodListBox.SelectedValue.ToString())]);
-                form.ShowDialog();
+                NC_NutrientInfo form = new NC_NutrientInfo(AvailableFavoriteFood[int.Parse(favoriteFoodListBox.SelectedValue.ToString())]);
+
+                if (form.ShowDialog(this) != DialogResult.OK && form.updateData)
+                {
+                    UpdateData();
+                }
+
+                form.Dispose();
             }
         }
 
@@ -283,8 +332,14 @@ namespace NC_UI
         {
             if (customFoodListBox.SelectedItem != null)
             {
-                NC_NutrientInfo form = new NC_NutrientInfo(AvailableFood[int.Parse(customFoodListBox.SelectedValue.ToString())]);
-                form.ShowDialog();
+                NC_NutrientInfo form = new NC_NutrientInfo(AvailableCustomFood[int.Parse(customFoodListBox.SelectedValue.ToString())]);                
+
+                if (form.ShowDialog(this) != DialogResult.OK && form.updateData)
+                {                                      
+                    UpdateData();
+                }
+                
+                form.Dispose();                
             }
         }
 
@@ -292,7 +347,7 @@ namespace NC_UI
         {
             if (recipeListBox.SelectedItem != null)
             {
-                NC_NutrientInfo form = new NC_NutrientInfo(AvailableFood[int.Parse(recipeListBox.SelectedValue.ToString())]);
+                NC_NutrientInfo form = new NC_NutrientInfo(AvailableRecipes[int.Parse(recipeListBox.SelectedValue.ToString())]);
                 form.ShowDialog();
             }
         }
@@ -301,9 +356,71 @@ namespace NC_UI
         {
             if (dayPlanListBox.SelectedItem != null)
             {
-                NC_NutrientInfo form = new NC_NutrientInfo(AvailableFood[int.Parse(dayPlanListBox.SelectedValue.ToString())]);
+                NC_NutrientInfo form = new NC_NutrientInfo(AvailablePlans[int.Parse(dayPlanListBox.SelectedValue.ToString())]);
                 form.ShowDialog();
             }
+        }
+
+        private void EditCustomFoodButton_Click(object sender, EventArgs e)
+        {
+            if (customFoodListBox.SelectedItem != null)
+            {
+                NC_CreateFood form = new NC_CreateFood(AvailableCustomFood[int.Parse(customFoodListBox.SelectedValue.ToString())]);
+
+                if (form.ShowDialog(this) != DialogResult.OK && form.updateData)
+                {
+                    UpdateData();
+                }
+
+                form.Dispose();
+            }
+        }
+
+        private void RemoveCommonFoodButton_Click(object sender, EventArgs e)
+        {
+            if (commonFoodListBox.SelectedItem != null)
+            {
+                AvailableCommonFood[int.Parse(commonFoodListBox.SelectedValue.ToString())].Type = "";
+                
+                sql.UpdateFood(AvailableCommonFood[int.Parse(commonFoodListBox.SelectedValue.ToString())]);
+
+                UpdateData();
+            }
+        }
+
+        private void RemoveFavoriteFoodButton_Click(object sender, EventArgs e)
+        {
+            if (favoriteFoodListBox.SelectedItem != null)
+            {
+                AvailableFavoriteFood[int.Parse(favoriteFoodListBox.SelectedValue.ToString())].Type = "";                
+
+                sql.UpdateFood(AvailableFavoriteFood[int.Parse(favoriteFoodListBox.SelectedValue.ToString())]);
+
+                UpdateData();
+            }
+        }
+
+        private void RemoveCustomFoodButton_Click(object sender, EventArgs e)
+        {
+            if (customFoodListBox.SelectedItem != null)
+            {
+                sql.DeleteFood(AvailableCustomFood[int.Parse(customFoodListBox.SelectedValue.ToString())]);
+
+                UpdateData();
+            }
+        }
+
+        private void NC_StartScreen_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            ActiveForm.Dispose();
+        }
+
+        private void UpdateData()
+        {
+            InitializeData();  
+            InitializeLists();
+            foodTab.Refresh();
+            MessageBox.Show("Test");
         }
     }
 }
