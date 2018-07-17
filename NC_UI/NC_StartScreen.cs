@@ -45,9 +45,15 @@ namespace NC_UI
         {
             InitializeComponent();
 
-            //InitializeData();            
+            //List<RecipeModel> newList = new List<RecipeModel>();
+            //newList = sql.GetRecipe_All();
 
-            //InitializeLists();
+            //List<PlanModel> newList2 = new List<PlanModel>();
+            //newList2 = sql.GetPlan_All();
+
+            List<double> dou = new List<double> { 100, 10.0, 0.000, 000.000, 0.0, 100.555 };
+
+            
 
             UpdateData();
 
@@ -184,8 +190,7 @@ namespace NC_UI
 
                 if ( model[i].Id == 0)
                 {
-                    model[i].Name = "Empty";                    
-                    //model[i].NutrientList = new decimal[32];
+                    model[i].Name = "Empty";   
                 }
                 else
                 {
@@ -193,7 +198,7 @@ namespace NC_UI
                 }
             }
 
-            decimal rowAvg = 0M;            
+            double rowAvg = 0;            
 
             for (int i = 1; i < weekListView.Items.Count; i++)
             {
@@ -208,7 +213,7 @@ namespace NC_UI
                     rowAvg += model[j - 1].NutrientList[i - 1];
                 }
                 weekListView.Items[i].SubItems[8].Text = $"{  Math.Round((rowAvg / 7),2).ToString() } / {GlobalConfig.dailyValues[i-1]}";
-                rowAvg = 0M;
+                rowAvg = 0;
             }
         }
 
@@ -279,8 +284,36 @@ namespace NC_UI
 
         private void AddRecipeButton(object sender, EventArgs e)
         {
-            NC_CreateRecipe form = new NC_CreateRecipe(new RecipeModel());            
-            form.ShowDialog();
+            NC_CreateRecipe form = new NC_CreateRecipe(new RecipeModel(), AvailableFood);
+
+            if (form.ShowDialog(this) != DialogResult.OK && form.updateData)
+            {
+                UpdateData();
+            }
+
+            form.Dispose();
+        }
+
+        private void EditRecipeButton_Click(object sender, EventArgs e)
+        {
+            NC_CreateRecipe form = new NC_CreateRecipe(AvailableRecipes[int.Parse(recipeListBox.SelectedValue.ToString())], AvailableFood);
+
+            if (form.ShowDialog(this) != DialogResult.OK && form.updateData)
+            {
+                UpdateData();
+            }
+
+            form.Dispose();
+        }
+
+        private void RemoveRecipeButton_Click(object sender, EventArgs e)
+        {
+            if (recipeListBox.SelectedItem != null)
+            {
+                sql.DeleteRecipe(AvailableRecipes[int.Parse(recipeListBox.SelectedValue.ToString())]);
+
+                UpdateData();
+            }
         }
 
         private void FoodListViewButton_Click(object sender, EventArgs e)
@@ -348,7 +381,9 @@ namespace NC_UI
             if (recipeListBox.SelectedItem != null)
             {
                 NC_NutrientInfo form = new NC_NutrientInfo(AvailableRecipes[int.Parse(recipeListBox.SelectedValue.ToString())]);
+
                 form.ShowDialog();
+                form.Dispose();
             }
         }
 
@@ -357,7 +392,9 @@ namespace NC_UI
             if (dayPlanListBox.SelectedItem != null)
             {
                 NC_NutrientInfo form = new NC_NutrientInfo(AvailablePlans[int.Parse(dayPlanListBox.SelectedValue.ToString())]);
+
                 form.ShowDialog();
+                form.Dispose();
             }
         }
 
@@ -420,7 +457,9 @@ namespace NC_UI
             InitializeData();  
             InitializeLists();
             foodTab.Refresh();
-            MessageBox.Show("Test");
+            //MessageBox.Show("Test");
         }
+
+      
     }
 }

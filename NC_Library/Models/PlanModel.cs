@@ -9,39 +9,48 @@ namespace NC_Library.Models
     public class PlanModel
     {
         public int Id { get; set; }
-        public string Name { get; set; }
-        public int Amount { get; set; }
+        public string Name { get; set; }        
         public List<FoodModel> FoodList { get; set; } = new List<FoodModel>();
         public List<RecipeModel> RecipeList { get; set; } = new List<RecipeModel>();
+        public List<int> FoodAmount { get; set; } = new List<int>();
 
-        //private decimal[] nutrientList = new decimal[32];
-
-        public decimal[] NutrientList
+        public int Amount
         {
             get
             {
-                //if (Id != 0)
-                //{
-                   return GetNutrientList();
-                //}                
-                //return nutrientList;
-            }
+                int tempAmount = 0;
 
-            //set
-            //{
-            //    nutrientList = value;
-            //}
+                foreach (int i in FoodAmount)
+                {
+                    tempAmount += i;
+                }
+
+                foreach (RecipeModel r in RecipeList)
+                {
+                    tempAmount += r.Amount;
+                }
+
+                return tempAmount;
+            }
         }
 
-        private decimal[] GetNutrientList()
+        public double[] NutrientList
         {
-            decimal[] nutrientList = new decimal[32];
+            get
+            {
+                return GetNutrientList();
+            }
+        }
+
+        private double[] GetNutrientList()
+        {
+            double[] nutrients = new double[32];
 
             if (FoodList != null)
             {
-                foreach (FoodModel f in FoodList)
+                for (int i = 0; i < FoodList.Count; i++)
                 {
-                    nutrientList.AddDecimalArray(f.NutrientList);
+                    nutrients.AddDoubleArray(FoodList[i].NutrientList, FoodAmount[i]);
                 }
             }
 
@@ -51,12 +60,12 @@ namespace NC_Library.Models
                 {
                     for (int i = 0; i < r.NutrientList.Length; i++)
                     {
-                        nutrientList[i] += r.NutrientList[i];
+                        nutrients[i] += r.NutrientList[i];
                     }
                 }
             }
 
-            return nutrientList;
+            return nutrients;
         }
     }
 }

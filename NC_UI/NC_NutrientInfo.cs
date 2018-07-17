@@ -14,8 +14,6 @@ namespace NC_UI
 {
     public partial class NC_NutrientInfo : Form
     {
-        public string testText = "123Test";
-
         private FoodModel Food { get; set; } = new FoodModel();
         private RecipeModel Recipe { get; set; } = new RecipeModel();
         private PlanModel Plan { get; set; } = new PlanModel();
@@ -44,7 +42,7 @@ namespace NC_UI
 
             Recipe = model;            
 
-            InitializeFood();
+            InitializeRecipe();
         }
 
         public NC_NutrientInfo(PlanModel model)
@@ -53,7 +51,7 @@ namespace NC_UI
 
             Plan = model;            
 
-            InitializeFood();
+            InitializePlan();
         }
 
         void FoodTest()
@@ -150,20 +148,20 @@ namespace NC_UI
             Close();           
         }
 
-        private void InitializeData(decimal[] tempNutrients)
+        private void InitializeData(double[] tempNutrients)
         {
             mainLabels = new Label[] { energyLabel, proteinLabel, carbsLabel, totalFatLabel, fiberLabel, calciumLabel, sugarLabel };
 
             for (int i = 0; i < mainLabels.Length; i++)
             {
-                mainLabels[i].Text = $"{ tempNutrients[i].ToString() } / { GlobalConfig.dailyValues[i] } ";
+                mainLabels[i].Text = $"{ Math.Round(tempNutrients[i], 2).ToString() } / { GlobalConfig.dailyValues[i] } ";
             }
 
             for (int i = 0; i < foodListView.Items.Count; i++)
             {
                 for (int j = 1; j < foodListView.Items[i].SubItems.Count; j += 2)
                 {
-                    foodListView.Items[i].SubItems[j].Text = $"{ tempNutrients[i + 10 * (j - 1) / 2 + 7].ToString() } / { GlobalConfig.dailyValues[i + 10 * (j - 1) / 2 + 7] }";
+                    foodListView.Items[i].SubItems[j].Text = $"{ Math.Round(tempNutrients[i + 10 * (j - 1) / 2 + 7], 2).ToString() } / { GlobalConfig.dailyValues[i + 10 * (j - 1) / 2 + 7] }";
                 }
             }
         }

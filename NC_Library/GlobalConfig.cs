@@ -30,26 +30,24 @@ namespace NC_Library
             return ConfigurationManager.ConnectionStrings[name].ConnectionString;
         }
 
-        public static decimal[] AddDecimalArray(this decimal[] d1, decimal[] d2)
+        public static double[] AddDoubleArray(this double[] d1, double[] d2)
         {
-            if (d1.Length >= d2.Length)
+            for (int i = 0; i < d1.Length; i++)
             {
-                for (int i = 0; i < d2.Length; i++)
-                {
-                    d1[i] += d2[i];
-                }
-
-                return d1;
+                d1[i] += d2[i];
             }
-            else
-            {
-                for (int i = 0; i < d1.Length; i++)
-                {
-                    d2[i] += d1[i];
-                }
 
-                return d2;
-            }            
+            return d1;                      
+        }
+
+        public static double[] AddDoubleArray(this double[] d1, double[] d2, int i1)
+        {
+            for (int i = 0; i < d1.Length; i++)
+            {
+                d1[i] += d2[i] * i1 / 100;
+            }
+
+            return d1;            
         }
     }
 }

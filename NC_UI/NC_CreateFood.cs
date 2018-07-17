@@ -76,7 +76,7 @@ namespace NC_UI
                 nutrientsDataGridView.Rows.Insert(0, s);
             }
 
-            decimal[] temp = Food.NutrientList;
+            double[] temp = Food.NutrientList;
 
             for (int i = 0; i < temp.Length; i++)
             {
@@ -103,7 +103,7 @@ namespace NC_UI
             {
                 try
                 {
-                    decimal.Parse(r.Cells[1].FormattedValue.ToString());
+                    double.Parse(r.Cells[1].FormattedValue.ToString());
                 }
                 catch (Exception)
                 {
@@ -124,7 +124,8 @@ namespace NC_UI
 
                 for (int i = 0; i < GlobalConfig.nutrientList.Length; i++)
                 {
-                    Food.Nutrient_List += $"{ Math.Round(decimal.Parse(nutrientsDataGridView.Rows[i].Cells[1].FormattedValue.ToString()), 2).ToString("0.##") };";
+                    // TODO - simplify
+                    Food.Nutrient_List += $"{ Math.Round(double.Parse(nutrientsDataGridView.Rows[i].Cells[1].FormattedValue.ToString()), 2).ToString("0.##") };";
                 }
 
                 Food.Nutrient_List = Food.Nutrient_List.Remove(Food.Nutrient_List.Length - 1);
@@ -140,7 +141,6 @@ namespace NC_UI
         private void CancelButton_Click(object sender, EventArgs e)
         {
             Close();
-            Dispose();
         }
 
         private void SaveButton_Click(object sender, EventArgs e)
@@ -153,7 +153,8 @@ namespace NC_UI
 
                 for (int i = 0; i < GlobalConfig.nutrientList.Length; i++)
                 {
-                    Food.Nutrient_List += $"{ Math.Round(decimal.Parse(nutrientsDataGridView.Rows[i].Cells[1].FormattedValue.ToString()), 2).ToString("0.##") };";
+                    // TODO - simplify
+                    Food.Nutrient_List += $"{ Math.Round(double.Parse(nutrientsDataGridView.Rows[i].Cells[1].FormattedValue.ToString()), 2).ToString("0.##") };";
                 }
 
                 Food.Nutrient_List = Food.Nutrient_List.Remove(Food.Nutrient_List.Length - 1);

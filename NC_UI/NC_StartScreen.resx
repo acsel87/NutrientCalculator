@@ -121,33 +121,33 @@
     <value>True</value>
   </metadata>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="planViewButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="viewPlanButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="planViewButton.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="viewPlanButton.Location" type="System.Drawing.Point, System.Drawing">
     <value>18, 32</value>
   </data>
-  <data name="planViewButton.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="viewPlanButton.Size" type="System.Drawing.Size, System.Drawing">
     <value>123, 41</value>
   </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="planViewButton.TabIndex" type="System.Int32, mscorlib">
+  <data name="viewPlanButton.TabIndex" type="System.Int32, mscorlib">
     <value>13</value>
   </data>
-  <data name="planViewButton.Text" xml:space="preserve">
+  <data name="viewPlanButton.Text" xml:space="preserve">
     <value>View</value>
   </data>
-  <data name="&gt;&gt;planViewButton.Name" xml:space="preserve">
-    <value>planViewButton</value>
+  <data name="&gt;&gt;viewPlanButton.Name" xml:space="preserve">
+    <value>viewPlanButton</value>
   </data>
-  <data name="&gt;&gt;planViewButton.Type" xml:space="preserve">
+  <data name="&gt;&gt;viewPlanButton.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;planViewButton.Parent" xml:space="preserve">
+  <data name="&gt;&gt;viewPlanButton.Parent" xml:space="preserve">
     <value>dayPlansTab</value>
   </data>
-  <data name="&gt;&gt;planViewButton.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;viewPlanButton.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <data name="label2.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
@@ -243,88 +243,88 @@
   <data name="&gt;&gt;dayPlanItemsListBox.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
-  <data name="button9.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="editPlanButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="button9.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="editPlanButton.Location" type="System.Drawing.Point, System.Drawing">
     <value>766, 30</value>
   </data>
-  <data name="button9.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="editPlanButton.Size" type="System.Drawing.Size, System.Drawing">
     <value>182, 44</value>
   </data>
-  <data name="button9.TabIndex" type="System.Int32, mscorlib">
+  <data name="editPlanButton.TabIndex" type="System.Int32, mscorlib">
     <value>9</value>
   </data>
-  <data name="button9.Text" xml:space="preserve">
+  <data name="editPlanButton.Text" xml:space="preserve">
     <value>Edit</value>
   </data>
-  <data name="&gt;&gt;button9.Name" xml:space="preserve">
-    <value>button9</value>
+  <data name="&gt;&gt;editPlanButton.Name" xml:space="preserve">
+    <value>editPlanButton</value>
   </data>
-  <data name="&gt;&gt;button9.Type" xml:space="preserve">
+  <data name="&gt;&gt;editPlanButton.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;button9.Parent" xml:space="preserve">
+  <data name="&gt;&gt;editPlanButton.Parent" xml:space="preserve">
     <value>dayPlansTab</value>
   </data>
-  <data name="&gt;&gt;button9.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;editPlanButton.ZOrder" xml:space="preserve">
     <value>4</value>
   </data>
-  <data name="button10.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="addPlanButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="button10.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="addPlanButton.Location" type="System.Drawing.Point, System.Drawing">
     <value>542, 30</value>
   </data>
-  <data name="button10.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="addPlanButton.Size" type="System.Drawing.Size, System.Drawing">
     <value>182, 44</value>
   </data>
-  <data name="button10.TabIndex" type="System.Int32, mscorlib">
+  <data name="addPlanButton.TabIndex" type="System.Int32, mscorlib">
     <value>8</value>
   </data>
-  <data name="button10.Text" xml:space="preserve">
+  <data name="addPlanButton.Text" xml:space="preserve">
     <value>Add</value>
   </data>
-  <data name="&gt;&gt;button10.Name" xml:space="preserve">
-    <value>button10</value>
+  <data name="&gt;&gt;addPlanButton.Name" xml:space="preserve">
+    <value>addPlanButton</value>
   </data>
-  <data name="&gt;&gt;button10.Type" xml:space="preserve">
+  <data name="&gt;&gt;addPlanButton.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;button10.Parent" xml:space="preserve">
+  <data name="&gt;&gt;addPlanButton.Parent" xml:space="preserve">
     <value>dayPlansTab</value>
   </data>
-  <data name="&gt;&gt;button10.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;addPlanButton.ZOrder" xml:space="preserve">
     <value>5</value>
   </data>
-  <data name="button11.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+  <data name="removePlanButton.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Right</value>
   </data>
-  <data name="button11.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="removePlanButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="button11.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="removePlanButton.Location" type="System.Drawing.Point, System.Drawing">
     <value>986, 30</value>
   </data>
-  <data name="button11.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="removePlanButton.Size" type="System.Drawing.Size, System.Drawing">
     <value>182, 44</value>
   </data>
-  <data name="button11.TabIndex" type="System.Int32, mscorlib">
+  <data name="removePlanButton.TabIndex" type="System.Int32, mscorlib">
     <value>7</value>
   </data>
-  <data name="button11.Text" xml:space="preserve">
+  <data name="removePlanButton.Text" xml:space="preserve">
     <value>Remove</value>
   </data>
-  <data name="&gt;&gt;button11.Name" xml:space="preserve">
-    <value>button11</value>
+  <data name="&gt;&gt;removePlanButton.Name" xml:space="preserve">
+    <value>removePlanButton</value>
   </data>
-  <data name="&gt;&gt;button11.Type" xml:space="preserve">
+  <data name="&gt;&gt;removePlanButton.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;button11.Parent" xml:space="preserve">
+  <data name="&gt;&gt;removePlanButton.Parent" xml:space="preserve">
     <value>dayPlansTab</value>
   </data>
-  <data name="&gt;&gt;button11.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;removePlanButton.ZOrder" xml:space="preserve">
     <value>6</value>
   </data>
   <data name="dayPlanListBox.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
@@ -387,58 +387,58 @@
   <metadata name="recipesTab.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <data name="recipeViewButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="viewRecipeButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="recipeViewButton.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="viewRecipeButton.Location" type="System.Drawing.Point, System.Drawing">
     <value>8, 34</value>
   </data>
-  <data name="recipeViewButton.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="viewRecipeButton.Size" type="System.Drawing.Size, System.Drawing">
     <value>123, 41</value>
   </data>
-  <data name="recipeViewButton.TabIndex" type="System.Int32, mscorlib">
+  <data name="viewRecipeButton.TabIndex" type="System.Int32, mscorlib">
     <value>10</value>
   </data>
-  <data name="recipeViewButton.Text" xml:space="preserve">
+  <data name="viewRecipeButton.Text" xml:space="preserve">
     <value>View</value>
   </data>
-  <data name="&gt;&gt;recipeViewButton.Name" xml:space="preserve">
-    <value>recipeViewButton</value>
+  <data name="&gt;&gt;viewRecipeButton.Name" xml:space="preserve">
+    <value>viewRecipeButton</value>
   </data>
-  <data name="&gt;&gt;recipeViewButton.Type" xml:space="preserve">
+  <data name="&gt;&gt;viewRecipeButton.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;recipeViewButton.Parent" xml:space="preserve">
+  <data name="&gt;&gt;viewRecipeButton.Parent" xml:space="preserve">
     <value>recipesTab</value>
   </data>
-  <data name="&gt;&gt;recipeViewButton.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;viewRecipeButton.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="button6.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="editRecipeButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="button6.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="editRecipeButton.Location" type="System.Drawing.Point, System.Drawing">
     <value>753, 32</value>
   </data>
-  <data name="button6.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="editRecipeButton.Size" type="System.Drawing.Size, System.Drawing">
     <value>182, 44</value>
   </data>
-  <data name="button6.TabIndex" type="System.Int32, mscorlib">
+  <data name="editRecipeButton.TabIndex" type="System.Int32, mscorlib">
     <value>9</value>
   </data>
-  <data name="button6.Text" xml:space="preserve">
+  <data name="editRecipeButton.Text" xml:space="preserve">
     <value>Edit</value>
   </data>
-  <data name="&gt;&gt;button6.Name" xml:space="preserve">
-    <value>button6</value>
+  <data name="&gt;&gt;editRecipeButton.Name" xml:space="preserve">
+    <value>editRecipeButton</value>
   </data>
-  <data name="&gt;&gt;button6.Type" xml:space="preserve">
+  <data name="&gt;&gt;editRecipeButton.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;button6.Parent" xml:space="preserve">
+  <data name="&gt;&gt;editRecipeButton.Parent" xml:space="preserve">
     <value>recipesTab</value>
   </data>
-  <data name="&gt;&gt;button6.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;editRecipeButton.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
   <data name="addRecipeButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
@@ -468,34 +468,34 @@
   <data name="&gt;&gt;addRecipeButton.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
-  <data name="button8.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+  <data name="removeRecipeButton.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Right</value>
   </data>
-  <data name="button8.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="removeRecipeButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="button8.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="removeRecipeButton.Location" type="System.Drawing.Point, System.Drawing">
     <value>976, 32</value>
   </data>
-  <data name="button8.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="removeRecipeButton.Size" type="System.Drawing.Size, System.Drawing">
     <value>182, 44</value>
   </data>
-  <data name="button8.TabIndex" type="System.Int32, mscorlib">
+  <data name="removeRecipeButton.TabIndex" type="System.Int32, mscorlib">
     <value>7</value>
   </data>
-  <data name="button8.Text" xml:space="preserve">
+  <data name="removeRecipeButton.Text" xml:space="preserve">
     <value>Remove</value>
   </data>
-  <data name="&gt;&gt;button8.Name" xml:space="preserve">
-    <value>button8</value>
+  <data name="&gt;&gt;removeRecipeButton.Name" xml:space="preserve">
+    <value>removeRecipeButton</value>
   </data>
-  <data name="&gt;&gt;button8.Type" xml:space="preserve">
+  <data name="&gt;&gt;removeRecipeButton.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;button8.Parent" xml:space="preserve">
+  <data name="&gt;&gt;removeRecipeButton.Parent" xml:space="preserve">
     <value>recipesTab</value>
   </data>
-  <data name="&gt;&gt;button8.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;removeRecipeButton.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
   <data name="recipeListBox.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">

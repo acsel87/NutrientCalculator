@@ -14,7 +14,7 @@ namespace NC_Library.Models
         public string Type { get; set; }
         public string Nutrient_List { get; set; }
 
-        public decimal[] NutrientList
+        public double[] NutrientList
         {
             get
             {
@@ -22,9 +22,9 @@ namespace NC_Library.Models
             }
         }
 
-        public decimal[] GetNutrientList()
+        public double[] GetNutrientList()
         {
-            decimal[] nutrientsDecimal = new decimal[32];
+            double[] nutrientsDouble = new double[32];
 
             if (Nutrient_List != null)
             {
@@ -32,13 +32,13 @@ namespace NC_Library.Models
 
                 for (int i = 0; i < nutrientValues.Length; i++)
                 {
-                    decimal temp = 0M;
-                    decimal.TryParse(nutrientValues[i], out temp);
-                    nutrientsDecimal[i] = Math.Round(temp, 2);
+                    double temp = 0;
+                    double.TryParse(nutrientValues[i], out temp);
+                    nutrientsDouble[i] = Math.Round(temp, 2);
                 }                
             }
 
-            return nutrientsDecimal;
+            return nutrientsDouble;
         }
     }
 }

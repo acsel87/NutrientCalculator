@@ -31,19 +31,19 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(NC_StartScreen));
             this.dayPlansTab = new System.Windows.Forms.TabPage();
-            this.planViewButton = new System.Windows.Forms.Button();
+            this.viewPlanButton = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.dayPlanItemsListBox = new System.Windows.Forms.ListBox();
-            this.button9 = new System.Windows.Forms.Button();
-            this.button10 = new System.Windows.Forms.Button();
-            this.button11 = new System.Windows.Forms.Button();
+            this.editPlanButton = new System.Windows.Forms.Button();
+            this.addPlanButton = new System.Windows.Forms.Button();
+            this.removePlanButton = new System.Windows.Forms.Button();
             this.dayPlanListBox = new System.Windows.Forms.ListBox();
             this.recipesTab = new System.Windows.Forms.TabPage();
-            this.recipeViewButton = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
+            this.viewRecipeButton = new System.Windows.Forms.Button();
+            this.editRecipeButton = new System.Windows.Forms.Button();
             this.addRecipeButton = new System.Windows.Forms.Button();
-            this.button8 = new System.Windows.Forms.Button();
+            this.removeRecipeButton = new System.Windows.Forms.Button();
             this.recipeListBox = new System.Windows.Forms.ListBox();
             this.foodTab = new System.Windows.Forms.TabPage();
             this.tabControl1 = new System.Windows.Forms.TabControl();
@@ -113,24 +113,24 @@
             // 
             // dayPlansTab
             // 
-            this.dayPlansTab.Controls.Add(this.planViewButton);
+            this.dayPlansTab.Controls.Add(this.viewPlanButton);
             this.dayPlansTab.Controls.Add(this.label2);
             this.dayPlansTab.Controls.Add(this.label1);
             this.dayPlansTab.Controls.Add(this.dayPlanItemsListBox);
-            this.dayPlansTab.Controls.Add(this.button9);
-            this.dayPlansTab.Controls.Add(this.button10);
-            this.dayPlansTab.Controls.Add(this.button11);
+            this.dayPlansTab.Controls.Add(this.editPlanButton);
+            this.dayPlansTab.Controls.Add(this.addPlanButton);
+            this.dayPlansTab.Controls.Add(this.removePlanButton);
             this.dayPlansTab.Controls.Add(this.dayPlanListBox);
             resources.ApplyResources(this.dayPlansTab, "dayPlansTab");
             this.dayPlansTab.Name = "dayPlansTab";
             this.dayPlansTab.UseVisualStyleBackColor = true;
             // 
-            // planViewButton
+            // viewPlanButton
             // 
-            resources.ApplyResources(this.planViewButton, "planViewButton");
-            this.planViewButton.Name = "planViewButton";
-            this.planViewButton.UseVisualStyleBackColor = true;
-            this.planViewButton.Click += new System.EventHandler(this.PlanViewButton_Click);
+            resources.ApplyResources(this.viewPlanButton, "viewPlanButton");
+            this.viewPlanButton.Name = "viewPlanButton";
+            this.viewPlanButton.UseVisualStyleBackColor = true;
+            this.viewPlanButton.Click += new System.EventHandler(this.PlanViewButton_Click);
             // 
             // label2
             // 
@@ -148,23 +148,23 @@
             this.dayPlanItemsListBox.FormattingEnabled = true;
             this.dayPlanItemsListBox.Name = "dayPlanItemsListBox";
             // 
-            // button9
+            // editPlanButton
             // 
-            resources.ApplyResources(this.button9, "button9");
-            this.button9.Name = "button9";
-            this.button9.UseVisualStyleBackColor = true;
+            resources.ApplyResources(this.editPlanButton, "editPlanButton");
+            this.editPlanButton.Name = "editPlanButton";
+            this.editPlanButton.UseVisualStyleBackColor = true;
             // 
-            // button10
+            // addPlanButton
             // 
-            resources.ApplyResources(this.button10, "button10");
-            this.button10.Name = "button10";
-            this.button10.UseVisualStyleBackColor = true;
+            resources.ApplyResources(this.addPlanButton, "addPlanButton");
+            this.addPlanButton.Name = "addPlanButton";
+            this.addPlanButton.UseVisualStyleBackColor = true;
             // 
-            // button11
+            // removePlanButton
             // 
-            resources.ApplyResources(this.button11, "button11");
-            this.button11.Name = "button11";
-            this.button11.UseVisualStyleBackColor = true;
+            resources.ApplyResources(this.removePlanButton, "removePlanButton");
+            this.removePlanButton.Name = "removePlanButton";
+            this.removePlanButton.UseVisualStyleBackColor = true;
             // 
             // dayPlanListBox
             // 
@@ -174,27 +174,28 @@
             // 
             // recipesTab
             // 
-            this.recipesTab.Controls.Add(this.recipeViewButton);
-            this.recipesTab.Controls.Add(this.button6);
+            this.recipesTab.Controls.Add(this.viewRecipeButton);
+            this.recipesTab.Controls.Add(this.editRecipeButton);
             this.recipesTab.Controls.Add(this.addRecipeButton);
-            this.recipesTab.Controls.Add(this.button8);
+            this.recipesTab.Controls.Add(this.removeRecipeButton);
             this.recipesTab.Controls.Add(this.recipeListBox);
             resources.ApplyResources(this.recipesTab, "recipesTab");
             this.recipesTab.Name = "recipesTab";
             this.recipesTab.UseVisualStyleBackColor = true;
             // 
-            // recipeViewButton
+            // viewRecipeButton
             // 
-            resources.ApplyResources(this.recipeViewButton, "recipeViewButton");
-            this.recipeViewButton.Name = "recipeViewButton";
-            this.recipeViewButton.UseVisualStyleBackColor = true;
-            this.recipeViewButton.Click += new System.EventHandler(this.RecipeViewButton_Click);
+            resources.ApplyResources(this.viewRecipeButton, "viewRecipeButton");
+            this.viewRecipeButton.Name = "viewRecipeButton";
+            this.viewRecipeButton.UseVisualStyleBackColor = true;
+            this.viewRecipeButton.Click += new System.EventHandler(this.RecipeViewButton_Click);
             // 
-            // button6
+            // editRecipeButton
             // 
-            resources.ApplyResources(this.button6, "button6");
-            this.button6.Name = "button6";
-            this.button6.UseVisualStyleBackColor = true;
+            resources.ApplyResources(this.editRecipeButton, "editRecipeButton");
+            this.editRecipeButton.Name = "editRecipeButton";
+            this.editRecipeButton.UseVisualStyleBackColor = true;
+            this.editRecipeButton.Click += new System.EventHandler(this.EditRecipeButton_Click);
             // 
             // addRecipeButton
             // 
@@ -203,11 +204,12 @@
             this.addRecipeButton.UseVisualStyleBackColor = true;
             this.addRecipeButton.Click += new System.EventHandler(this.AddRecipeButton);
             // 
-            // button8
+            // removeRecipeButton
             // 
-            resources.ApplyResources(this.button8, "button8");
-            this.button8.Name = "button8";
-            this.button8.UseVisualStyleBackColor = true;
+            resources.ApplyResources(this.removeRecipeButton, "removeRecipeButton");
+            this.removeRecipeButton.Name = "removeRecipeButton";
+            this.removeRecipeButton.UseVisualStyleBackColor = true;
+            this.removeRecipeButton.Click += new System.EventHandler(this.RemoveRecipeButton_Click);
             // 
             // recipeListBox
             // 
@@ -766,9 +768,9 @@
         private System.Windows.Forms.ListBox commonFoodListBox;
         private System.Windows.Forms.Button removeFavoriteFoodButton;
         private System.Windows.Forms.ListBox favoriteFoodListBox;
-        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button editRecipeButton;
         private System.Windows.Forms.Button addRecipeButton;
-        private System.Windows.Forms.Button button8;
+        private System.Windows.Forms.Button removeRecipeButton;
         private System.Windows.Forms.ListBox recipeListBox;
         private System.Windows.Forms.Button editCustomFoodButton;
         private System.Windows.Forms.Button addCustomFoodButton;
@@ -777,9 +779,9 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ListBox dayPlanItemsListBox;
-        private System.Windows.Forms.Button button9;
-        private System.Windows.Forms.Button button10;
-        private System.Windows.Forms.Button button11;
+        private System.Windows.Forms.Button editPlanButton;
+        private System.Windows.Forms.Button addPlanButton;
+        private System.Windows.Forms.Button removePlanButton;
         private System.Windows.Forms.ListBox dayPlanListBox;
         private System.Windows.Forms.Button removePlanButtonMon;
         private System.Windows.Forms.ListBox planListBox;
@@ -805,7 +807,7 @@
         private System.Windows.Forms.Button viewCommonFoodButton;
         private System.Windows.Forms.Button viewFavoriteFoodButton;
         private System.Windows.Forms.Button viewCustomFoodButton;
-        private System.Windows.Forms.Button planViewButton;
-        private System.Windows.Forms.Button recipeViewButton;
+        private System.Windows.Forms.Button viewPlanButton;
+        private System.Windows.Forms.Button viewRecipeButton;
     }
 }

@@ -18,7 +18,7 @@ namespace NC_Library
         {
             List<string> result = new List<string>();
 
-            decimal rowAvg = 0M;
+            double rowAvg = 0;
 
             result.Add(",Monday,Tuesday,Wednesday,Thursday,Friday,Saturday,Sunday,Average");
             result.Add("Nutrients / Day Plan");
@@ -39,7 +39,7 @@ namespace NC_Library
                     rowAvg += model[j].NutrientList[i - 2];
                 }
                 result[i] += $",{  Math.Round((rowAvg / 7), 2).ToString() } / {GlobalConfig.dailyValues[i - 2]}";
-                rowAvg = 0M;
+                rowAvg = 0;
             }
 
             SaveFileDialog saveFile = new SaveFileDialog

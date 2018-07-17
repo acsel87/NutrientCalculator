@@ -47,10 +47,12 @@ namespace NC_Library.DataAccess
                 {
                     p = new DynamicParameters();
                     p.Add("@PlanId", model.Id);
-                    foreach (FoodModel f in model.FoodList)
-                    {                        
+
+                    for (int i = 0; i < model.FoodList.Count; i++)
+                    {
                         p.Add("@RecipeId", null);
-                        p.Add("@FoodId", f.Id);
+                        p.Add("@FoodId", model.FoodList[i].Id);
+                        p.Add("@FoodAmount", model.FoodAmount[i]);
 
                         connection.Execute("dbo.spPlanItems_Insert", p, commandType: CommandType.StoredProcedure);
                     }
@@ -77,7 +79,6 @@ namespace NC_Library.DataAccess
             {
                 var p = new DynamicParameters();
                 p.Add("@Name", model.Name);
-                p.Add("@Amount", model.Amount);
                 p.Add("@id", 0, dbType: DbType.Int32, direction: ParameterDirection.Output);
 
                 connection.Execute("dbo.spRecipe_Insert", p, commandType: CommandType.StoredProcedure);
@@ -88,10 +89,11 @@ namespace NC_Library.DataAccess
                 {
                     p = new DynamicParameters();
                     p.Add("@RecipeId", model.Id);
-                    foreach (FoodModel f in model.FoodList)
-                    {
-                        p.Add("@FoodId", f.Id);
 
+                    for (int i = 0; i < model.FoodList.Count; i++)
+                    {
+                        p.Add("@FoodId", model.FoodList[i].Id);
+                        p.Add("@FoodAmount", model.FoodAmount[i]);
                         connection.Execute("dbo.spRecipeItems_Insert", p, commandType: CommandType.StoredProcedure);
                     }
                 }
@@ -175,14 +177,18 @@ namespace NC_Library.DataAccess
 
                     pm.FoodList = connection.Query<FoodModel>("dbo.spPlanItems_GetFood", p, commandType: CommandType.StoredProcedure).ToList();
 
+                    pm.FoodAmount = connection.Query<int>("dbo.spPlanItems_GetFoodAmount", p, commandType: CommandType.StoredProcedure).ToList();
+
                     List<RecipeModel> recipes = connection.Query<RecipeModel>("dbo.spPlanItems_GetRecipe", p, commandType: CommandType.StoredProcedure).ToList();
-                    
+
                     foreach (RecipeModel r in recipes)
                     {
                         p = new DynamicParameters();
                         p.Add("@Id", r.Id);
 
                         r.FoodList = connection.Query<FoodModel>("dbo.spRecipeItems_GetFood", p, commandType: CommandType.StoredProcedure).ToList();
+
+                        r.FoodAmount = connection.Query<int>("dbo.spRecipeItems_GetFoodAmount", p, commandType: CommandType.StoredProcedure).ToList();
                     }
 
                     pm.RecipeList = recipes;
@@ -206,6 +212,8 @@ namespace NC_Library.DataAccess
                     p.Add("@Id", r.Id);
 
                     r.FoodList = connection.Query<FoodModel>("dbo.spRecipeItems_GetFood", p, commandType: CommandType.StoredProcedure).ToList();
+
+                    r.FoodAmount = connection.Query<int>("dbo.spRecipeItems_GetFoodAmount", p, commandType: CommandType.StoredProcedure).ToList();
                 }    
             }            
             return output;
@@ -238,7 +246,6 @@ namespace NC_Library.DataAccess
             {
                 var p = new DynamicParameters();
                 p.Add("@Name", model.Name);
-                p.Add("@Amount", model.Amount);
                 p.Add("@Id", model.Id);
 
                 connection.Execute("dbo.spPlan_Update", p, commandType: CommandType.StoredProcedure);
@@ -250,10 +257,11 @@ namespace NC_Library.DataAccess
 
                 if (model.FoodList != null)
                 {
-                    foreach (FoodModel f in model.FoodList)
+                    for (int i = 0; i < model.FoodList.Count; i++)
                     {
                         p.Add("@RecipeId", null);
-                        p.Add("@FoodId", f.Id);
+                        p.Add("@FoodId", model.FoodList[i].Id);
+                        p.Add("@FoodAmount", model.FoodAmount[i]);
 
                         connection.Execute("dbo.spPlanItems_Insert", p, commandType: CommandType.StoredProcedure);
                     }
@@ -277,8 +285,7 @@ namespace NC_Library.DataAccess
             using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(GlobalConfig.CnnString(db)))
             {
                 var p = new DynamicParameters();
-                p.Add("@Name", model.Name);
-                p.Add("@Amount", model.Amount);                
+                p.Add("@Name", model.Name);               
                 p.Add("@Id", model.Id);
 
                 connection.Execute("dbo.spRecipe_Update", p, commandType: CommandType.StoredProcedure);
@@ -290,9 +297,10 @@ namespace NC_Library.DataAccess
 
                 if (model.FoodList != null)
                 {
-                    foreach (FoodModel f in model.FoodList)
+                    for (int i = 0; i < model.FoodList.Count; i++)
                     {
-                        p.Add("@FoodId", f.Id);
+                        p.Add("@FoodId", model.FoodList[i].Id);
+                        p.Add("@FoodAmount", model.FoodAmount[i]);
 
                         connection.Execute("dbo.spRecipeItems_Insert", p, commandType: CommandType.StoredProcedure);
                     }
