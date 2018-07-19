@@ -22,6 +22,8 @@ namespace NC_UI
 
         List<FoodModel> recipeFoodList = new List<FoodModel>();
 
+        List<int> foodAmount = new List<int>();
+
         public bool updateData = false;
 
         public NC_CreateRecipe(RecipeModel model, Dictionary<int, FoodModel> availableFood)
@@ -73,10 +75,7 @@ namespace NC_UI
 
             for (int i = 0; i < Recipe.FoodList.Count; i++)
             {
-                foodDataGridView.Rows.Insert(0, Recipe.FoodList[i].Name);
-
-                // TODO - rows start from the bottom
-                foodDataGridView.Rows[foodDataGridView.Rows.Count - i].Cells[1].Value = Recipe.FoodAmount[i].ToString();
+                foodDataGridView.Rows.Add(Recipe.FoodList[i].Name, Recipe.FoodAmount[i].ToString());                
             }
 
             addFoodComboBox.DisplayMember = "Name";
@@ -84,19 +83,19 @@ namespace NC_UI
             addFoodComboBox.DataSource = new BindingSource(AvailableFood.Values, null);
         }
 
-        private bool CheckFrom()
+        private bool CheckForm()
         {
             bool isOk = true;
 
             if (recipeNameTextBox.Text == (string)recipeNameTextBox.Tag)
             {
                 isOk = false;
-                MessageBox.Show("Insert name for food");
+                MessageBox.Show("Insert name for recipe");
             }
             else if (recipeNameTextBox.Text.Length < 2)
             {
                 isOk = false;
-                MessageBox.Show("Food name must have at least 2 characters");
+                MessageBox.Show("Recipe name must have at least 2 characters");
             }
 
             foreach (DataGridViewRow r in foodDataGridView.Rows)
@@ -108,7 +107,7 @@ namespace NC_UI
                 catch (Exception)
                 {
                     isOk = false;
-                    MessageBox.Show("All amount values must be numerical");
+                    MessageBox.Show("All amount values must be integral numbers");
                     break;
                 }
             }
@@ -129,6 +128,8 @@ namespace NC_UI
                 foodDataGridView.Rows.Insert(0,AvailableFood[int.Parse(addFoodComboBox.SelectedValue.ToString())].Name);
 
                 recipeFoodList.Add(AvailableFood[int.Parse(addFoodComboBox.SelectedValue.ToString())]);
+
+                updateData = true;
             }
         }
 
@@ -139,12 +140,14 @@ namespace NC_UI
                 recipeFoodList.RemoveAt(foodDataGridView.CurrentCell.RowIndex);
 
                 foodDataGridView.Rows.RemoveAt(foodDataGridView.CurrentCell.RowIndex);
+
+                updateData = true;
             }
         }
 
         private void CreateRecipeButton_Click(object sender, EventArgs e)
         {
-            if (CheckFrom())
+            if (CheckForm())
             {
                 {
                     Recipe.Name = recipeNameTextBox.Text;
@@ -152,9 +155,11 @@ namespace NC_UI
                     Recipe.FoodList = recipeFoodList;
 
                     foreach (DataGridViewRow r in foodDataGridView.Rows)
-                    {                        
-                        Recipe.FoodAmount.Add(int.Parse(r.Cells[1].FormattedValue.ToString()));
-                    }                   
+                    {
+                        foodAmount.Add(int.Parse(r.Cells[1].FormattedValue.ToString()));                       
+                    }
+
+                    Recipe.FoodAmount = foodAmount;
 
                     sql.CreateRecipe(Recipe);
 
@@ -167,7 +172,7 @@ namespace NC_UI
 
         private void SaveRecipeButton_Click(object sender, EventArgs e)
         {
-            if (CheckFrom())
+            if (CheckForm())
             {
                 Recipe.Name = recipeNameTextBox.Text;
 
@@ -175,8 +180,10 @@ namespace NC_UI
 
                 foreach (DataGridViewRow r in foodDataGridView.Rows)
                 {
-                    Recipe.FoodAmount.Add(int.Parse(r.Cells[1].FormattedValue.ToString()));
+                    foodAmount.Add(int.Parse(r.Cells[1].FormattedValue.ToString()));
                 }
+
+                Recipe.FoodAmount = foodAmount;
 
                 sql.UpdateRecipe(Recipe);
 

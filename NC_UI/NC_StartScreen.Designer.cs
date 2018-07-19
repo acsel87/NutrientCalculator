@@ -130,7 +130,7 @@
             resources.ApplyResources(this.viewPlanButton, "viewPlanButton");
             this.viewPlanButton.Name = "viewPlanButton";
             this.viewPlanButton.UseVisualStyleBackColor = true;
-            this.viewPlanButton.Click += new System.EventHandler(this.PlanViewButton_Click);
+            this.viewPlanButton.Click += new System.EventHandler(this.ViewPlanButton_Click);
             // 
             // label2
             // 
@@ -153,24 +153,28 @@
             resources.ApplyResources(this.editPlanButton, "editPlanButton");
             this.editPlanButton.Name = "editPlanButton";
             this.editPlanButton.UseVisualStyleBackColor = true;
+            this.editPlanButton.Click += new System.EventHandler(this.EditPlanButton_Click);
             // 
             // addPlanButton
             // 
             resources.ApplyResources(this.addPlanButton, "addPlanButton");
             this.addPlanButton.Name = "addPlanButton";
             this.addPlanButton.UseVisualStyleBackColor = true;
+            this.addPlanButton.Click += new System.EventHandler(this.AddPlanButton_Click_1);
             // 
             // removePlanButton
             // 
             resources.ApplyResources(this.removePlanButton, "removePlanButton");
             this.removePlanButton.Name = "removePlanButton";
             this.removePlanButton.UseVisualStyleBackColor = true;
+            this.removePlanButton.Click += new System.EventHandler(this.RemovePlanButton_Click_1);
             // 
             // dayPlanListBox
             // 
             resources.ApplyResources(this.dayPlanListBox, "dayPlanListBox");
             this.dayPlanListBox.FormattingEnabled = true;
             this.dayPlanListBox.Name = "dayPlanListBox";
+            this.dayPlanListBox.SelectedIndexChanged += new System.EventHandler(this.DayPlanListBox_SelectedIndexChanged);
             // 
             // recipesTab
             // 
@@ -188,7 +192,7 @@
             resources.ApplyResources(this.viewRecipeButton, "viewRecipeButton");
             this.viewRecipeButton.Name = "viewRecipeButton";
             this.viewRecipeButton.UseVisualStyleBackColor = true;
-            this.viewRecipeButton.Click += new System.EventHandler(this.RecipeViewButton_Click);
+            this.viewRecipeButton.Click += new System.EventHandler(this.ViewRecipeViewButton_Click);
             // 
             // editRecipeButton
             // 
@@ -271,7 +275,7 @@
             resources.ApplyResources(this.viewCommonFoodButton, "viewCommonFoodButton");
             this.viewCommonFoodButton.Name = "viewCommonFoodButton";
             this.viewCommonFoodButton.UseVisualStyleBackColor = true;
-            this.viewCommonFoodButton.Click += new System.EventHandler(this.CommonFoodViewButton_Click);
+            this.viewCommonFoodButton.Click += new System.EventHandler(this.ViewCommonFoodButton_Click);
             // 
             // removeCommonFoodButton
             // 
@@ -300,7 +304,7 @@
             resources.ApplyResources(this.viewFavoriteFoodButton, "viewFavoriteFoodButton");
             this.viewFavoriteFoodButton.Name = "viewFavoriteFoodButton";
             this.viewFavoriteFoodButton.UseVisualStyleBackColor = true;
-            this.viewFavoriteFoodButton.Click += new System.EventHandler(this.FavoriteFoodViewButton_Click);
+            this.viewFavoriteFoodButton.Click += new System.EventHandler(this.ViewFavoriteFoodButton_Click);
             // 
             // removeFavoriteFoodButton
             // 
@@ -331,7 +335,7 @@
             resources.ApplyResources(this.viewCustomFoodButton, "viewCustomFoodButton");
             this.viewCustomFoodButton.Name = "viewCustomFoodButton";
             this.viewCustomFoodButton.UseVisualStyleBackColor = true;
-            this.viewCustomFoodButton.Click += new System.EventHandler(this.CustomFoodViewButton_Click);
+            this.viewCustomFoodButton.Click += new System.EventHandler(this.ViewCustomFoodButton_Click);
             // 
             // editCustomFoodButton
             // 
@@ -392,7 +396,7 @@
             this.weekPlansPanel.Controls.Add(this.cancelPlanButton);
             this.weekPlansPanel.ForeColor = System.Drawing.Color.Transparent;
             this.weekPlansPanel.Name = "weekPlansPanel";
-            this.weekPlansPanel.Click += new System.EventHandler(this.TabControl_Click);
+            this.weekPlansPanel.Click += new System.EventHandler(this.WeekPlansPanel_Click);
             // 
             // label3
             // 
@@ -409,7 +413,7 @@
             this.planListBox.ForeColor = System.Drawing.SystemColors.WindowText;
             this.planListBox.FormattingEnabled = true;
             this.planListBox.Name = "planListBox";
-            this.planListBox.SelectedIndexChanged += new System.EventHandler(this.PlanListBox_SelectedIndexChanged);
+            this.planListBox.SelectedValueChanged += new System.EventHandler(this.PlanListBox_SelectedIndexChanged);
             // 
             // cancelPlanButton
             // 
@@ -651,7 +655,6 @@
             this.weekListView.ShowGroups = false;
             this.weekListView.UseCompatibleStateImageBehavior = false;
             this.weekListView.View = System.Windows.Forms.View.Details;
-            this.weekListView.Click += new System.EventHandler(this.TabControl_Click);
             // 
             // columnHeader1
             // 
@@ -700,7 +703,6 @@
             this.tabControl.SelectedIndex = 0;
             this.tabControl.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.tabControl.Tag = "";
-            this.tabControl.Click += new System.EventHandler(this.TabControl_Click);
             // 
             // exportContextMenuStrip
             // 

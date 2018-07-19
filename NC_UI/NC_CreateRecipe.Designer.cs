@@ -37,11 +37,11 @@
             this.recipeNameTextBox = new System.Windows.Forms.TextBox();
             this.addFoodButton = new System.Windows.Forms.Button();
             this.foodDataGridView = new System.Windows.Forms.DataGridView();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Per100g = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.removeFoodButton = new System.Windows.Forms.Button();
             this.saveRecipeButton = new System.Windows.Forms.Button();
             this.addFoodComboBox = new System.Windows.Forms.ComboBox();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Per100g = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.foodDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -119,6 +119,36 @@
             this.foodDataGridView.Size = new System.Drawing.Size(500, 540);
             this.foodDataGridView.TabIndex = 11;
             // 
+            // Column1
+            // 
+            this.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            dataGridViewCellStyle1.Format = "N2";
+            this.Column1.DefaultCellStyle = dataGridViewCellStyle1;
+            this.Column1.FillWeight = 149.2386F;
+            this.Column1.HeaderText = "Food";
+            this.Column1.MinimumWidth = 300;
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            this.Column1.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // Per100g
+            // 
+            this.Per100g.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.Fuchsia;
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Blue;
+            dataGridViewCellStyle2.Format = "N2";
+            dataGridViewCellStyle2.NullValue = "0";
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.Per100g.DefaultCellStyle = dataGridViewCellStyle2;
+            this.Per100g.FillWeight = 50.76144F;
+            this.Per100g.HeaderText = "Grams";
+            this.Per100g.MinimumWidth = 50;
+            this.Per100g.Name = "Per100g";
+            this.Per100g.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
             // removeFoodButton
             // 
             this.removeFoodButton.Font = new System.Drawing.Font("Calibri", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -153,36 +183,6 @@
             this.addFoodComboBox.Name = "addFoodComboBox";
             this.addFoodComboBox.Size = new System.Drawing.Size(329, 23);
             this.addFoodComboBox.TabIndex = 15;
-            // 
-            // Column1
-            // 
-            this.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle1.Format = "N2";
-            this.Column1.DefaultCellStyle = dataGridViewCellStyle1;
-            this.Column1.FillWeight = 149.2386F;
-            this.Column1.HeaderText = "Food";
-            this.Column1.MinimumWidth = 300;
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            this.Column1.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            // 
-            // Per100g
-            // 
-            this.Per100g.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.Fuchsia;
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Blue;
-            dataGridViewCellStyle2.Format = "N2";
-            dataGridViewCellStyle2.NullValue = "0";
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.Per100g.DefaultCellStyle = dataGridViewCellStyle2;
-            this.Per100g.FillWeight = 50.76144F;
-            this.Per100g.HeaderText = "Grams";
-            this.Per100g.MinimumWidth = 50;
-            this.Per100g.Name = "Per100g";
-            this.Per100g.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             // 
             // NC_CreateRecipe
             // 

@@ -39,21 +39,11 @@ namespace NC_UI
         Dictionary<int, RecipeModel> AvailableRecipes { get; set; } = new Dictionary<int, RecipeModel>();
         Dictionary<int, PlanModel> AvailablePlans { get; set; } = new Dictionary<int, PlanModel>();        
 
-        Button clickedButton = new Button();      
+        Button clickedButton = new Button();
 
         public NC_StartScreen()
         {
             InitializeComponent();
-
-            //List<RecipeModel> newList = new List<RecipeModel>();
-            //newList = sql.GetRecipe_All();
-
-            //List<PlanModel> newList2 = new List<PlanModel>();
-            //newList2 = sql.GetPlan_All();
-
-            List<double> dou = new List<double> { 100, 10.0, 0.000, 000.000, 0.0, 100.555 };
-
-            
 
             UpdateData();
 
@@ -135,31 +125,16 @@ namespace NC_UI
                 dayPlanListBox.DisplayMember = "Name";
                 dayPlanListBox.ValueMember = "Id";
                 dayPlanListBox.DataSource = new BindingSource(AvailablePlans.Values, null);
-                planListBox = dayPlanListBox;
+
+                planListBox.DisplayMember = "Name";
+                planListBox.ValueMember = "Id";
+                planListBox.DataSource = new BindingSource(AvailablePlans.Values, null);
             }
             else
             {
                 dayPlanListBox.DataSource = null;
                 planListBox.DataSource = null;
             }
-        }
-
-        // TODO - update all food
-        private void UpdateFood()
-        { 
-            
-        }
-
-        // TODO - update all recipes
-        private void UpdateRecipes()
-        {
-
-        }
-
-        // TODO - update all plans
-        private void UpdatePlans()
-        {           
-
         }
 
         private void InsertOriginalFoods()
@@ -182,19 +157,25 @@ namespace NC_UI
             //    userSettings.WeekValues[i] = "0";
             //}
 
+            //TODO - update buttons at application start
+            MessageBox.Show("update buttons at application start");
             userSettings.Save();
 
             for (int i = 0; i < model.Count; i++)
             {
-                model[i].Id = int.Parse(userSettings.WeekValues[i]);
+                int tempID = int.Parse(userSettings.WeekValues[i]);
 
-                if ( model[i].Id == 0)
+                model[i] = new PlanModel();
+
+                if (AvailablePlans.ContainsKey(tempID))
                 {
-                    model[i].Name = "Empty";   
+                    model[i] = AvailablePlans[tempID];
                 }
                 else
                 {
-                    model[i] = sql.ViewPlan(model[i]);
+                    userSettings.WeekValues[i] = "0";
+                    model[i].Id = 0;
+                    model[i].Name = "Empty";
                 }
             }
 
@@ -226,15 +207,20 @@ namespace NC_UI
         }
 
         private void PlanListBox_SelectedIndexChanged(object sender, EventArgs e)
-        {           
-            userSettings.WeekValues[int.Parse(clickedButton.Tag.ToString())] = AvailablePlans[planListBox.SelectedIndex].Id.ToString();
-            
-            UpdateWeek(Week);            
+        {
+            if (weekPlansPanel.Visible == true && planListBox.SelectedItem != null)
+            {                
+                int tempKey = int.Parse(planListBox.SelectedValue.ToString());                
 
-            clickedButton.Visible = false;
-            Controls.Find($"removePlanButton{clickedButton.Text}", true).First().Visible = true;
-            
-            weekPlansPanel.Visible = false;
+                userSettings.WeekValues[int.Parse(clickedButton.Tag.ToString())] = AvailablePlans[tempKey].Id.ToString();
+
+                UpdateWeek(Week);                
+
+                clickedButton.Visible = false;
+                Controls.Find($"removePlanButton{clickedButton.Text}", true).First().Visible = true;
+
+                weekPlansPanel.Visible = false;
+            }  
         }
 
         private void CancelPlanButton_Click(object sender, EventArgs e)
@@ -258,16 +244,95 @@ namespace NC_UI
         private void ExportButton_Click(object sender, EventArgs e)
         {
             exportContextMenuStrip.Show(exportButton, exportButton.Width, 0);            
-        }       
-
-        private void TabControl_Click(object sender, EventArgs e)
-        {
-             weekPlansPanel.Visible = false;
-        }        
+        }     
 
         private void Csv_Click(object sender, EventArgs e)
         {
             NC_Logic.ExportCSV(Week);    
+        }
+
+        private void FoodListViewButton_Click(object sender, EventArgs e)
+        {
+            if (foodSearchComboBox.SelectedItem != null)
+            {
+                NC_NutrientInfo form = new NC_NutrientInfo(AvailableFood[int.Parse(foodSearchComboBox.SelectedValue.ToString())]);
+
+                if (form.ShowDialog(this) != DialogResult.OK && form.updateData)
+                {
+                    UpdateData();
+                }
+
+                form.Dispose();
+            }
+        }
+
+        private void ViewCommonFoodButton_Click(object sender, EventArgs e)
+        {
+            if (commonFoodListBox.SelectedItem != null)
+            {
+                NC_NutrientInfo form = new NC_NutrientInfo(AvailableCommonFood[int.Parse(commonFoodListBox.SelectedValue.ToString())]);
+
+                if (form.ShowDialog(this) != DialogResult.OK && form.updateData)
+                {
+                    UpdateData();
+                }
+
+                form.Dispose();
+            }
+        }
+
+        private void RemoveCommonFoodButton_Click(object sender, EventArgs e)
+        {
+            if (commonFoodListBox.SelectedItem != null)
+            {
+                AvailableCommonFood[int.Parse(commonFoodListBox.SelectedValue.ToString())].Type = "";
+
+                sql.UpdateFood(AvailableCommonFood[int.Parse(commonFoodListBox.SelectedValue.ToString())]);
+
+                UpdateData();
+            }
+        }
+
+        private void ViewFavoriteFoodButton_Click(object sender, EventArgs e)
+        {
+            if (favoriteFoodListBox.SelectedItem != null)
+            {
+                NC_NutrientInfo form = new NC_NutrientInfo(AvailableFavoriteFood[int.Parse(favoriteFoodListBox.SelectedValue.ToString())]);
+
+                if (form.ShowDialog(this) != DialogResult.OK && form.updateData)
+                {
+                    UpdateData();
+                }
+
+                form.Dispose();
+            }
+        }
+
+        private void RemoveFavoriteFoodButton_Click(object sender, EventArgs e)
+        {
+            if (favoriteFoodListBox.SelectedItem != null)
+            {
+                AvailableFavoriteFood[int.Parse(favoriteFoodListBox.SelectedValue.ToString())].Type = "";
+
+                sql.UpdateFood(AvailableFavoriteFood[int.Parse(favoriteFoodListBox.SelectedValue.ToString())]);
+
+                UpdateData();
+            }
+        }
+
+        private void ViewCustomFoodButton_Click(object sender, EventArgs e)
+        {
+            if (customFoodListBox.SelectedItem != null)
+            {
+                NC_NutrientInfo form = new NC_NutrientInfo(AvailableCustomFood[int.Parse(customFoodListBox.SelectedValue.ToString())]);
+
+                if (form.ShowDialog(this) != DialogResult.OK && form.updateData)
+                {
+                    UpdateData();
+                }
+
+                form.Dispose();
+            }
         }
 
         private void AddCustomFoodButton_Click(object sender, EventArgs e)
@@ -280,6 +345,42 @@ namespace NC_UI
             }
 
             form.Dispose();
+        }
+
+        private void EditCustomFoodButton_Click(object sender, EventArgs e)
+        {
+            if (customFoodListBox.SelectedItem != null)
+            {
+                NC_CreateFood form = new NC_CreateFood(AvailableCustomFood[int.Parse(customFoodListBox.SelectedValue.ToString())]);
+
+                if (form.ShowDialog(this) != DialogResult.OK && form.updateData)
+                {
+                    UpdateData();
+                }
+
+                form.Dispose();
+            }
+        }
+
+        private void RemoveCustomFoodButton_Click(object sender, EventArgs e)
+        {
+            if (customFoodListBox.SelectedItem != null)
+            {
+                sql.DeleteFood(AvailableCustomFood[int.Parse(customFoodListBox.SelectedValue.ToString())]);
+
+                UpdateData();
+            }
+        }
+
+        private void ViewRecipeViewButton_Click(object sender, EventArgs e)
+        {
+            if (recipeListBox.SelectedItem != null)
+            {
+                NC_NutrientInfo form = new NC_NutrientInfo(AvailableRecipes[int.Parse(recipeListBox.SelectedValue.ToString())]);
+
+                form.ShowDialog();
+                form.Dispose();
+            }
         }
 
         private void AddRecipeButton(object sender, EventArgs e)
@@ -316,78 +417,7 @@ namespace NC_UI
             }
         }
 
-        private void FoodListViewButton_Click(object sender, EventArgs e)
-        {
-            if (foodSearchComboBox.SelectedItem != null)
-            {
-                NC_NutrientInfo form = new NC_NutrientInfo(AvailableFood[int.Parse(foodSearchComboBox.SelectedValue.ToString())]);
-
-                if (form.ShowDialog(this) != DialogResult.OK && form.updateData)
-                {
-                    UpdateData();
-                }
-
-                form.Dispose();
-            }
-        }
-
-        private void CommonFoodViewButton_Click(object sender, EventArgs e)
-        {
-            if (commonFoodListBox.SelectedItem != null)
-            {
-                NC_NutrientInfo form = new NC_NutrientInfo(AvailableCommonFood[int.Parse(commonFoodListBox.SelectedValue.ToString())]);
-
-                if (form.ShowDialog(this) != DialogResult.OK && form.updateData)
-                {
-                    UpdateData();
-                }
-
-                form.Dispose();
-            }
-        }
-
-        private void FavoriteFoodViewButton_Click(object sender, EventArgs e)
-        {
-            if (favoriteFoodListBox.SelectedItem != null)
-            {
-                NC_NutrientInfo form = new NC_NutrientInfo(AvailableFavoriteFood[int.Parse(favoriteFoodListBox.SelectedValue.ToString())]);
-
-                if (form.ShowDialog(this) != DialogResult.OK && form.updateData)
-                {
-                    UpdateData();
-                }
-
-                form.Dispose();
-            }
-        }
-
-        private void CustomFoodViewButton_Click(object sender, EventArgs e)
-        {
-            if (customFoodListBox.SelectedItem != null)
-            {
-                NC_NutrientInfo form = new NC_NutrientInfo(AvailableCustomFood[int.Parse(customFoodListBox.SelectedValue.ToString())]);                
-
-                if (form.ShowDialog(this) != DialogResult.OK && form.updateData)
-                {                                      
-                    UpdateData();
-                }
-                
-                form.Dispose();                
-            }
-        }
-
-        private void RecipeViewButton_Click(object sender, EventArgs e)
-        {
-            if (recipeListBox.SelectedItem != null)
-            {
-                NC_NutrientInfo form = new NC_NutrientInfo(AvailableRecipes[int.Parse(recipeListBox.SelectedValue.ToString())]);
-
-                form.ShowDialog();
-                form.Dispose();
-            }
-        }
-
-        private void PlanViewButton_Click(object sender, EventArgs e)
+        private void ViewPlanButton_Click(object sender, EventArgs e)
         {
             if (dayPlanListBox.SelectedItem != null)
             {
@@ -398,53 +428,55 @@ namespace NC_UI
             }
         }
 
-        private void EditCustomFoodButton_Click(object sender, EventArgs e)
+        private void AddPlanButton_Click_1(object sender, EventArgs e)
         {
-            if (customFoodListBox.SelectedItem != null)
+            NC_CreateDayPlan form = new NC_CreateDayPlan(new PlanModel(), AvailableFood, AvailableRecipes);
+
+            if (form.ShowDialog(this) != DialogResult.OK && form.updateData)
             {
-                NC_CreateFood form = new NC_CreateFood(AvailableCustomFood[int.Parse(customFoodListBox.SelectedValue.ToString())]);
-
-                if (form.ShowDialog(this) != DialogResult.OK && form.updateData)
-                {
-                    UpdateData();
-                }
-
-                form.Dispose();
-            }
-        }
-
-        private void RemoveCommonFoodButton_Click(object sender, EventArgs e)
-        {
-            if (commonFoodListBox.SelectedItem != null)
-            {
-                AvailableCommonFood[int.Parse(commonFoodListBox.SelectedValue.ToString())].Type = "";
-                
-                sql.UpdateFood(AvailableCommonFood[int.Parse(commonFoodListBox.SelectedValue.ToString())]);
-
                 UpdateData();
             }
+
+            form.Dispose();
         }
 
-        private void RemoveFavoriteFoodButton_Click(object sender, EventArgs e)
+        private void EditPlanButton_Click(object sender, EventArgs e)
         {
-            if (favoriteFoodListBox.SelectedItem != null)
+            NC_CreateDayPlan form = new NC_CreateDayPlan(AvailablePlans[int.Parse(dayPlanListBox.SelectedValue.ToString())], AvailableFood, AvailableRecipes);
+
+            if (form.ShowDialog(this) != DialogResult.OK && form.updateData)
             {
-                AvailableFavoriteFood[int.Parse(favoriteFoodListBox.SelectedValue.ToString())].Type = "";                
-
-                sql.UpdateFood(AvailableFavoriteFood[int.Parse(favoriteFoodListBox.SelectedValue.ToString())]);
-
                 UpdateData();
             }
+
+            form.Dispose();
         }
 
-        private void RemoveCustomFoodButton_Click(object sender, EventArgs e)
+        private void RemovePlanButton_Click_1(object sender, EventArgs e)
         {
-            if (customFoodListBox.SelectedItem != null)
+            if (dayPlanListBox.SelectedItem != null)
             {
-                sql.DeleteFood(AvailableCustomFood[int.Parse(customFoodListBox.SelectedValue.ToString())]);
+                sql.DeletePlan(AvailablePlans[int.Parse(dayPlanListBox.SelectedValue.ToString())]);
 
                 UpdateData();
+
+                UpdateWeek(Week);
+            }           
+        }
+
+        private void DayPlanListBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            dayPlanItemsListBox.Items.Clear();
+
+            foreach (RecipeModel r in AvailablePlans[int.Parse(dayPlanListBox.SelectedValue.ToString())].RecipeList)
+            {
+                dayPlanItemsListBox.Items.Add(r.Name);
             }
+
+            foreach (FoodModel f in AvailablePlans[int.Parse(dayPlanListBox.SelectedValue.ToString())].FoodList)
+            {
+                dayPlanItemsListBox.Items.Add(f.Name);
+            }           
         }
 
         private void NC_StartScreen_FormClosed(object sender, FormClosedEventArgs e)
@@ -457,9 +489,11 @@ namespace NC_UI
             InitializeData();  
             InitializeLists();
             foodTab.Refresh();
-            //MessageBox.Show("Test");
         }
 
-      
+        private void WeekPlansPanel_Click(object sender, EventArgs e)
+        {
+            weekPlansPanel.Visible = false;
+        }
     }
 }

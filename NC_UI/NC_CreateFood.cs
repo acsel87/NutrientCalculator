@@ -69,8 +69,6 @@ namespace NC_UI
                 saveButton.Enabled = false;
             }
 
-            //Food = sql.ViewFood(Food); - food infor already in reference
-
             foreach (string s in GlobalConfig.nutrientList)
             {
                 nutrientsDataGridView.Rows.Insert(0, s);
@@ -138,11 +136,6 @@ namespace NC_UI
             }
         }
 
-        private void CancelButton_Click(object sender, EventArgs e)
-        {
-            Close();
-        }
-
         private void SaveButton_Click(object sender, EventArgs e)
         {
             if (CheckFrom())
@@ -165,6 +158,11 @@ namespace NC_UI
 
                 Close();                
             }
+        }
+
+        private void CancelButton_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }
